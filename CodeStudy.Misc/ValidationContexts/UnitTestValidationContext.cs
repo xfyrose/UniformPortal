@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -134,20 +135,20 @@ namespace CodeStudy.Misc.ValidationContexts
                 Console.WriteLine("ErrorMessage: {0}", result.ErrorMessage);
             });
 
-            //Tuple
-            //results.Clear();
-            //isValid = Validator.TryValidateValue(toValidate1.MeName,
-            //    new ValidationContext(toValidate1, null, null) { MemberName = "MeName" },
-            //    results);
-            //Console.WriteLine("toValidate1: {0}", isValid);
-            //results.ForEach(result =>
-            //{
-            //    foreach (string name in result.MemberNames)
-            //    {
-            //        Console.WriteLine("    {0}", name);
-            //    }
-            //    Console.WriteLine("ErrorMessage: {0}", result.ErrorMessage);
-            //});
+            results.Clear();
+            isValid = Validator.TryValidateValue(0,
+                new ValidationContext(0, null, null),
+                results,
+                typeof(ValidateMe).GetProperty("Prop1").GetCustomAttributes(false).OfType<ValidationAttribute>());
+            Console.WriteLine("toValidate1: {0}", isValid);
+            results.ForEach(result =>
+            {
+                foreach (string name in result.MemberNames)
+                {
+                    Console.WriteLine("    {0}", name);
+                }
+                Console.WriteLine("ErrorMessage: {0}", result.ErrorMessage);
+            });
         }
 
         [TestMethod]

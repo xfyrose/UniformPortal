@@ -66,9 +66,9 @@ namespace CodeStudy.Misc.ValidationContexts
     {
         public ValidateMe()
         {
-            TypeDescriptor.AddProviderTransparent(
-                new AssociatedMetadataTypeTypeDescriptionProvider(typeof(ValidateMe), typeof(ValidateMeMetaData)),
-                typeof(ValidateMe));
+            //TypeDescriptor.AddProviderTransparent(
+            //    new AssociatedMetadataTypeTypeDescriptionProvider(typeof(ValidateMe), typeof(ValidateMeMetaData)),
+            //    typeof(ValidateMe));
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
@@ -111,7 +111,6 @@ namespace CodeStudy.Misc.ValidationContexts
         [Range(3, 5)]
         public int Prop1 { get; set; }
 
-        [ScaffoldColumn(false)]
         [Range(1, 5)]
         public int Prop2 { get; set; }
 
@@ -119,19 +118,19 @@ namespace CodeStudy.Misc.ValidationContexts
         public string MeName { get; set; }
     }
 
-    [MetadataType(typeof(ValidateMeMetaData))]
+    //[MetadataType(typeof(ValidateMeMetaData))]
     public class ValidateMeDto
     {
         public ValidateMeDto()
         {
-            //TypeDescriptor.AddProviderTransparent(
-            //    new AssociatedMetadataTypeTypeDescriptionProvider(typeof(ValidateMeDto), typeof(ValidateMeMetaData)),
-            //    typeof(ValidateMeDto));
+            TypeDescriptor.AddProviderTransparent(
+                new AssociatedMetadataTypeTypeDescriptionProvider(typeof(ValidateMeDto), typeof(ValidateMeMetaData)),
+                typeof(ValidateMeDto));
         }
 
         public bool Enable { get; set; }
         public int Prop1 { get; set; }
-        //public string Prop2 { get; set; }
+        public string Prop2 { get; set; }
 
         public string MeName { get; set; }
 
