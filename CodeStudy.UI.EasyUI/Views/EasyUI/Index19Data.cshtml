@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index19Data";
+}
+
+<div id="content" style="height:200px" class="easyui-panel" data-options="href:'/EasyUI/Index19User?pageNumber=1'"></div>
+<div id="box" style="background: #efefef; border: 1px solid #ccc" class="easyui-pagination" data-options="
+     total:11,
+     pageSize:1,
+     pageNumber:1,
+     pageList: [1, 2, 3],
+     onSelectPage: function(pageNumber, pageSize) {
+         $('#content').panel('refresh', '/EasyUI/Index19User?pageNumber=' + pageNumber + '&pageSize=' + pageSize);
+     }">
+  
+</div>

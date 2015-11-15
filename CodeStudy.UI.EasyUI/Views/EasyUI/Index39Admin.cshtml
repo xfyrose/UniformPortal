@@ -1,0 +1,40 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index39Js";
+}
+
+
+    <div style="height:60px;background:#666" data-options="region:'north', title:'header',split:true,noheader:true">
+        <div class="logo">
+            后台管理
+        </div>
+        <div class="logout">
+            <a href="/EasyUI/Index39Logout">退出</a>
+        </div>
+    </div>
+
+    <div style="width: 180px; padding: 10px; height: auto" data-options="region:'west',title:'导航',split:true,iconCls:'icon-world'">
+        <ul id="nav"></ul>
+    </div>
+
+    <div style="overflow:hidden" data-options="region:'center'">
+        <div id="tabs">
+            <div style="padding:0 10px;display:block" title="起始页" data-options="iconCls:'icon-house'">
+                <p>欢迎来到后台管理系统</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 35px; line-height: 30px; text-align: center" data-options="region:'south',title:'footer',split:true,noheader:true">
+        Powered by EasyUI
+    </div>
+
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index39admin.js"></script>
+}
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Content/myeasyui/index39admin.css">
+}

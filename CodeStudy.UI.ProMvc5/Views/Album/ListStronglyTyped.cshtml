@@ -1,0 +1,17 @@
+﻿@using CodeStudy.UI.ProMvc5.Models;
+
+@model IEnumerable<Album>
+
+@{
+    ViewBag.Title = "ListStronglyTyped";
+}
+
+<h2>ListStronglyTyped</h2>
+
+<ul>
+    @foreach (Album a in Model)
+    {
+        <li>@a.Title</li>
+    }
+</ul>
+

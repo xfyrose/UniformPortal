@@ -1,0 +1,9 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index03Data";
+}
+
+<div id="box" class="easyui-draggable" style="width:400px;height:200px;background-color:orange" data-options="onBeforeDrag : function(e) {console.log(e);alert('BeforeDrag');}">
+    <span id="pox">内容部分</span>
+</div>

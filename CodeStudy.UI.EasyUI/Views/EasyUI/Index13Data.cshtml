@@ -1,0 +1,16 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index13Data";
+}
+
+<div id="box" style="width:600px;height:400px" title="My Window" class="easyui-window" data-options="iconCls:'icon-save',model:true">
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'west',split:true" style="width:80px;">菜单区</div>
+        <div data-options="region:'center'">内容区</div>
+        <div data-options="region:'south',border:false" style="height: 50px;">
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确认</a>
+            <a class="easyui-linkbutton">取消</a>
+        </div>
+    </div>
+</div>

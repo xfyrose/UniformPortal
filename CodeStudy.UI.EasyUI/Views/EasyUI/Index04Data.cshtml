@@ -1,0 +1,11 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index04Data";
+}
+
+<div id="dd" class="easyui-droppable" style="width:600px; height:400px; background-color:black" data-options="onDragEnter: function(e, source) {$(this).css('background', 'orange');}"></div>
+
+<div id="box" class="easyui-draggable" style="width:100px;height:100px;background-color:#ccc" data-options="">
+    <span id="pox">内容部分</span>
+</div>

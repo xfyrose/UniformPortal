@@ -1,0 +1,26 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index39Js";
+}
+
+<div id="login">
+    <p>
+        管理员账号：<input id="manager" type="text" class="textbox"/>
+    </p>
+    <p>
+        管理员密码：<input id="password" type="password" class="=textbox"/>
+    </p>
+</div>
+
+<div id="btn">
+    <a href="javascript:void(0)" class="easyui-linkbutton">登录</a>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index39.js"></script>
+}
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/Content/myeasyui/index39.css">
+}

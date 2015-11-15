@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+<h1>Layout</h1>
+<div>
+    @RenderBody()
+</div>
+<div style="color: red;">
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer", required: false)
+    }
+    else
+    {
+        @: this is the default footer;
+    }
+</div>
+</body>
+</html>
+0

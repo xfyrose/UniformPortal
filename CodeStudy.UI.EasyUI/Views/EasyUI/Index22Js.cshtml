@@ -1,0 +1,24 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index22Js";
+}
+
+<input id="box" />
+
+<div id="food">
+    <div style="color: #99BBE8; background: #fafafa; padding: 5px">
+        请选择一个食物
+    </div>
+    <div style="padding:10px">
+        <input type="radio" name="food" value="01" /><span>煎饼果子</span><br />
+        <input type="radio" name="food" value="02" /><span>牛腩米线</span><br />
+        <input type="radio" name="food" value="03" /><span>水果沙拉</span><br />
+        <input type="radio" name="food" value="04" /><span>蛋黄派</span><br />
+        <input type="radio" name="food" value="05" /><span>其他</span>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index22.js"></script>
+}

@@ -1,0 +1,27 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index10Js";
+}
+
+<div id="box" style="width: 500px; height: 250px;">
+    <div title="Tab1">
+        tab1
+    </div>
+    <div id="tab2" title="Tab2" data-options="closable:true">
+        tab2
+    </div>
+    <div title="Tab3" data-options="iconCls:'icon-reload', closable:true">
+        tab3
+    </div>
+</div>
+
+<div id="tt">
+    <a href="#" class="icon-add" onclick="javascript: alert('add');"> </a>
+    <a href="#" class="icon-edit" onclick="javascript: alert('edit');"> </a>
+    <a href="#" class="icon-cut" onclick="javascript: alert('cut');"> </a>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index10.js"></script>
+}

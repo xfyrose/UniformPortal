@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{199F63D3-7A1F-41ED-8D5F-8EBA936FBF7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeStudy.EntityFrameworkCodeFirst.DataAccess</RootNamespace>
+    <AssemblyName>CodeStudy.EntityFrameworkCodeFirst.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAnnotation\Chapter01\VetContext.cs" />
+    <Compile Include="DataAnnotation\Chapter02\BreakAwayContext.cs" />
+    <Compile Include="DataAnnotation\Chapter03\BreakAwayContext.cs" />
+    <Compile Include="DataAnnotation\Chapter05\BreakAwayContext.cs" />
+    <Compile Include="FluentApi\Chapter01\RolePermissionContext.cs" />
+    <Compile Include="FluentApi\Chapter01\VetContext.cs" />
+    <Compile Include="FluentApi\Chapter02\BreakAwayContext.cs" />
+    <Compile Include="FluentApi\Chapter02\Configurations\AddressConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter02\Configurations\DestinationConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter02\Configurations\LodgingConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter02\Configurations\PersonConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter02\Configurations\TripConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter03\BreakAway.cs" />
+    <Compile Include="FluentApi\Chapter03\Configurations\DestinationConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter03\Configurations\InternetSpecialConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter03\Configurations\LodgingConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter03\Configurations\PersonConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter03\Configurations\PersonPhotoConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter05\BreakAwayContext.cs" />
+    <Compile Include="FluentApi\Chapter05\Configurations\DestinationConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter05\Configurations\LodgingConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter05\Configurations\PersonConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter05\Configurations\PersonPhotoConfiguration.cs" />
+    <Compile Include="FluentApi\Chapter05\Configurations\ReservationConfiguration.cs" />
+    <Compile Include="MigrationsDataAnnotationChapter01\201509270838543_InitialCreate.cs" />
+    <Compile Include="MigrationsDataAnnotationChapter01\201509270838543_InitialCreate.Designer.cs">
+      <DependentUpon>201509270838543_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsDataAnnotationChapter01\201509270840523_AddAnimalTypeTypeNameNotNull.cs" />
+    <Compile Include="MigrationsDataAnnotationChapter01\201509270840523_AddAnimalTypeTypeNameNotNull.Designer.cs">
+      <DependentUpon>201509270840523_AddAnimalTypeTypeNameNotNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsDataAnnotationChapter01\Configuration.cs" />
+    <Compile Include="MigrationsDataAnnotationsChapter02\201509280704108_InitialCreate.cs" />
+    <Compile Include="MigrationsDataAnnotationsChapter02\201509280704108_InitialCreate.Designer.cs">
+      <DependentUpon>201509280704108_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsDataAnnotationsChapter02\Configuration.cs" />
+    <Compile Include="MigrationsDataAnnotationsChapter03\Configuration.cs" />
+    <Compile Include="MigrationsDataAnnotationsChapter05\Configuration.cs" />
+    <Compile Include="MigrationsFluentApiChapter01\201509270907544_InitialCreate.cs" />
+    <Compile Include="MigrationsFluentApiChapter01\201509270907544_InitialCreate.Designer.cs">
+      <DependentUpon>201509270907544_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsFluentApiChapter01\201509270909169_ChangeAnimalTypeTypeNameMaxLength.cs" />
+    <Compile Include="MigrationsFluentApiChapter01\201509270909169_ChangeAnimalTypeTypeNameMaxLength.Designer.cs">
+      <DependentUpon>201509270909169_ChangeAnimalTypeTypeNameMaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationsFluentApiChapter01\Configuration.cs" />
+    <Compile Include="MigrationsFluentApiChapter02\Configuration.cs" />
+    <Compile Include="MigrationsFluentApiChapter03\Configuration.cs" />
+    <Compile Include="MigrationsFluentApiChapter05\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MigrationsDataAnnotationChapter01\201509270838543_InitialCreate.resx">
+      <DependentUpon>201509270838543_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsDataAnnotationChapter01\201509270840523_AddAnimalTypeTypeNameNotNull.resx">
+      <DependentUpon>201509270840523_AddAnimalTypeTypeNameNotNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsDataAnnotationsChapter02\201509280704108_InitialCreate.resx">
+      <DependentUpon>201509280704108_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsFluentApiChapter01\201509270907544_InitialCreate.resx">
+      <DependentUpon>201509270907544_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationsFluentApiChapter01\201509270909169_ChangeAnimalTypeTypeNameMaxLength.resx">
+      <DependentUpon>201509270909169_ChangeAnimalTypeTypeNameMaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeStudy.EntityFrameworkCodeFirst.Model\CodeStudy.EntityFrameworkCodeFirst.Model.csproj">
+      <Project>{72d4422a-56a7-4a50-8d9e-d0742405fa8d}</Project>
+      <Name>CodeStudy.EntityFrameworkCodeFirst.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

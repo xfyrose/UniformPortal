@@ -1,0 +1,12 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index33Data";
+}
+
+<select style="width:200px" class="easyui-combobox" data-options="filter: function(q, row) { var opts = $(this).combobox('options'); return row[opts.textField].indexOf(q) >= 0;}">
+    <option value="a1">a1</option>
+    <option value="b1">b1</option>
+    <option value="c1">c1</option>
+    <option value="d1">d1</option>
+</select>

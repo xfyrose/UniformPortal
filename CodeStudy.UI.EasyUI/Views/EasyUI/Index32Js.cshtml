@@ -1,0 +1,33 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index32Js";
+}
+
+<table id="box"></table>
+
+<div id="tb">
+    <div>
+        <a href="javascript:void(0)" onclick="obj.add();" class="easyui-linkbutton" data-options="iconCls:'icon-add', plain:true">添加</a>
+        <a href="javascript:void(0)" onclick="obj.edit();" class="easyui-linkbutton" data-options="iconCls:'icon-edit', plain:true">修改</a>
+        <a href="javascript:void(0)" onclick="obj.remove();" class="easyui-linkbutton" data-options="iconCls:'icon-remove', plain:true">删除</a>
+        <a id="save" href="javascript:void(0)" onclick="obj.save();" style="display: none" class="easyui-linkbutton" data-options="iconCls:'icon-save', plain:true">保存</a>
+        <a id="redo" href="javascript:void(0)" onclick="obj.redo();" style="display: none" class="easyui-linkbutton" data-options="iconCls:'icon-redo', plain:true">取消编辑</a>
+    </div>
+    <div>
+        查询账号:<input name="UserName" style="width: 110px" class="textbox"/>
+        查询时间:<input name="Create_From" style="width: 110px" class="easyui-datebox" data-options="editable:false"/>
+        到:<input name="Create_To" style="width: 110px" class="easyui-datebox" data-options="editable:false"/>
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="obj.search()">查询</a>
+    </div>
+</div>
+
+<div id="rowmenu" style="width:120px;display:none" class="easyui-menu">
+    <div onclick="" data-options="iconCls:'icon-add'">增加</div>
+    <div onclick="" data-options="iconCls:'icon-edit'">修改</div>
+    <div onclick="" data-options="iconCls:'icon-remove'">删除</div>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index32.js"></script>
+}

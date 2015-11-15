@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index12Js";
+}
+
+<div id="box" style="width: 600px; height: 400px">
+    <div style="height: 100px" data-options="region:'north',title:'North Title',split:true"></div>
+    <div style="height: 100px" data-options="region:'south',title:'South Title',split:true"></div>
+    <div style="width: 100px" data-options="region:'east',title:'East',split:true"></div>
+    <div style="width: 100px" data-options="region:'west', title:'West',split:true"></div>
+    <div style="padding: 5px; background: #eee" data-options="region:'center',title:'center title'"></div>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index12.js"></script>
+}

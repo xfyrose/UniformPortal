@@ -1,0 +1,21 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index31Js";
+}
+
+<form id="box" method="post" action="123.html">
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" class="easyui-validatebox" data-options="required:true" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text" class="easyui-validatebox" data-options="validType:'email'"/>
+    </div>
+    <input type="submit" />
+</form>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/myeasyui/index31.js"></script>
+}
