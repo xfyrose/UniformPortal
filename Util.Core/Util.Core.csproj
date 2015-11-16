@@ -48,10 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Str.cs" />
     <Compile Include="Validations\IValidation.cs" />
-    <Compile Include="Validations\IValidationHandler.cs" />
+    <Compile Include="Validations\IValidationResultHandler.cs" />
     <Compile Include="Validations\IValidationRule.cs" />
     <Compile Include="Validations\Validation.cs" />
-    <Compile Include="Validations\ValidationHandler.cs" />
+    <Compile Include="Validations\ValidationResultHandler.cs" />
     <Compile Include="Validations\ValidationResultCollection.cs" />
     <Compile Include="Warning.cs" />
   </ItemGroup>

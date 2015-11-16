@@ -9,13 +9,13 @@ namespace Util.Domains
         protected DomainBase()
         {
             _rules = new List<IValidationRule>();
-            _handler = new ValidationHandler();
+            _handler = new ValidationResultHandler();
         }
 
-        private List<IValidationRule> _rules;
-        private IValidationHandler _handler;
+        private readonly List<IValidationRule> _rules;
+        private IValidationResultHandler _handler;
 
-        public void SetValidationHandler(IValidationHandler handler)
+        public void SetValidationResultHandler(IValidationResultHandler handler)
         {
             if (handler == null)
             {
@@ -37,17 +37,38 @@ namespace Util.Domains
 
         public virtual void Validate()
         {
-            
+            ValidationResultCollection result = GetValidationResult();
+
+            HandleVlidationResult(result);
         }
 
         private ValidationResultCollection GetValidationResult()
         {
-            
+            ValidationResultCollection result = ValidationFactory.Create().Validate(this);
+            Validate(result);
+            _rules.ForEach(rule => result.Add(rule.Validate()));
+
+            return result;
         }
 
         protected virtual void Validate(ValidationResultCollection results)
         {
             
+        }
+
+        private void HandleVlidationResult(ValidationResultCollection results)
+        {
+            if (results.IsValid)
+            {
+                return;
+            }
+
+            _handler.Handle(results);
+        }
+
+        public virtual bool IsNull()
+        {
+            return false;
         }
     }
 }

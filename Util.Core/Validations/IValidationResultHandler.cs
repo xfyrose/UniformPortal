@@ -1,6 +1,6 @@
 ﻿namespace Util.Core.Validations
 {
-    public interface IValidationHandler
+    public interface IValidationResultHandler
     {
         void Handle(ValidationResultCollection results);
     }

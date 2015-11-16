@@ -2,7 +2,7 @@
 
 namespace Util.Core.Validations
 {
-    public class ValidationHandler : IValidationHandler
+    public class ValidationResultHandler : IValidationResultHandler
     {
         public void Handle(ValidationResultCollection results)
         {

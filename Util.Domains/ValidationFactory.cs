@@ -12,7 +12,7 @@ namespace Util.Domains
     {
         public static IValidation Create()
         {
-            return new 
+            return new Validation();
         }
     }
 }
