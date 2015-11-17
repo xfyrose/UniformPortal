@@ -52,6 +52,10 @@
       <Project>{a8b7c8ee-7d75-4f2d-b42d-66dd4795bda2}</Project>
       <Name>Util.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util.Security\Util.Security.csproj">
+      <Project>{0902955b-7cd0-4ee6-8efc-2982704b96a4}</Project>
+      <Name>Util.Security</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

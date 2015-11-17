@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using Util.Core;
 using Util.Core.Logs;
+using Util.Security;
 
 namespace Util.Logs.Log4
 {
@@ -76,8 +78,46 @@ namespace Util.Logs.Log4
 
         private static ILog GetContextLog(Func<ILog> handler)
         {
-            string key = 
+            string key = Config.GetLogContextKey();
+
+            ILog log = Context.Get<ILog>(key);
+            if (log != null)
+            {
+                return log;
+            }
+
+            log = handler();
+            Context.Add(key, log);
+            return log;
         }
+
+        public static ILog GetContextLog(string className)
+        {
+            ILog log = GetContextLog(() => GetLog(className));
+            log.Class = className;
+
+            return log;
+        }
+
+        public static ILog GetContextLog(object instance)
+        {
+            if (instance == null)
+            {
+                return GetLog();
+            }
+
+            return GetContextLog(instance.GetType());
+        }
+
+        private Test _test;
+
+        private LogLevel Level { get; set; }
+
+        private Identity Identity { get; set; }
+
+        private string ErrorMessage { get; set; }
+
+        private string StackTrace { get; set; }
 
         public string TraceId { get; set; }
         public string BusinessId { get; set; }
@@ -93,9 +133,22 @@ namespace Util.Logs.Log4
         public Str SqlParams { get; set; }
         public string ErrorCode { get; set; }
         public Exception Exception { get; set; }
+
         public void Debug()
         {
-            throw new NotImplementedException();
+            Execute(() =>
+            {
+                Level = LogLevel.Debug;
+                _log.Debug(GetMessage());
+            });
+        }
+
+        private LogMessage
+
+        private void Execute(Action action)
+        {
+            action();
+            Clear();
         }
 
         public void Info()
