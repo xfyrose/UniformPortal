@@ -27,7 +27,7 @@ namespace Util.Core.Logs.Formats
                 return;
             }
 
-            Result.AddLine(CommonLog.LogFormatParams);
+            Result.AddLine($"{CommonLog.LogFormatParams}:");
             Result.Add(Message.Params);
         }
     }

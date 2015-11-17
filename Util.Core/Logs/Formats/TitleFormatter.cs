@@ -28,17 +28,17 @@ namespace Util.Core.Logs.Formats
 
         private void AddTraceId()
         {
-            Result.Add(CommonLog.LogFormatTraceId, Message.TraceId);
+            Result.Add($"{CommonLog.LogFormatTraceId}：{0}", Message.TraceId);
         }
 
         private void AddTime()
         {
-            Result.Add(CommonLog.LogFormatTime, Message.Time);
+            Result.Add($"{CommonLog.LogFormatTime}：{0}", Message.Time);
         }
 
         private void AddTotalSeconds()
         {
-            Result.Add(CommonLog.LogFormatTotalSeconds, Message.TotalSeconds);
+            Result.Add($"{CommonLog.LogFormatTotalSeconds}：{0}", Message.TotalSeconds);
         }
     }
 }

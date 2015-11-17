@@ -97,6 +97,15 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 堆栈跟踪.
+        /// </summary>
+        public static string StackTrace {
+            get {
+                return ResourceManager.GetString("StackTrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 系统忙，请稍后再试！.
         /// </summary>
         public static string SystemBusy {

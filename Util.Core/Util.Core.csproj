@@ -53,10 +53,13 @@
     <Compile Include="Logs\Formats\CaptionFormatter.cs" />
     <Compile Include="Logs\Formats\ClassFormatter.cs" />
     <Compile Include="Logs\Formats\ContentFormatter.cs" />
+    <Compile Include="Logs\Formats\ErrorFormatter.cs" />
     <Compile Include="Logs\Formats\FormatterBase.cs" />
     <Compile Include="Logs\Formats\IpFormatter.cs" />
     <Compile Include="Logs\Formats\LogMessageFormatter.cs" />
     <Compile Include="Logs\Formats\SqlFormatter.cs" />
+    <Compile Include="Logs\Formats\SqlParamsFormatter.cs" />
+    <Compile Include="Logs\Formats\StackTraceFormatter.cs" />
     <Compile Include="Logs\Formats\TitleFormatter.cs" />
     <Compile Include="Logs\Formats\UrlFormatter.cs" />
     <Compile Include="Logs\Formats\UserFormatter.cs" />

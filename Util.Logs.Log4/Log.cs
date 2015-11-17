@@ -143,12 +143,36 @@ namespace Util.Logs.Log4
             });
         }
 
-        private LogMessage
-
         private void Execute(Action action)
         {
             action();
             Clear();
+        }
+
+        private LogMessage GetMessage()
+        {
+            InitException();
+            return CreateMessage();
+        }
+
+        private void InitException()
+        {
+            if (Exception == null)
+            {
+                return;
+            }
+
+            Warning warning = new Warning(Exception);
+            ErrorMessage = warning.Message;
+            StackTrace = warning.StackTrace;
+        }
+
+        private LogMessage CreateMessage()
+        {
+            return new LogMessage()
+            {
+                Level = Level.Description();
+            }
         }
 
         public void Info()

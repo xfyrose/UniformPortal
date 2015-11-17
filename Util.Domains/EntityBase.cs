@@ -1,11 +1,13 @@
-﻿namespace Util.Domains
+﻿using Util.Logs.Log4;
+
+namespace Util.Domains
 {
     public class EntityBase<TKey> : DomainBase, IEntity<TKey>
     {
         protected EntityBase(TKey id)
         {
             Id = id;
-            Log = Logs.Log4.Log.GetContextLog(this);
+            Log = Log.GetContextLog(this);
         }
 
 

@@ -148,25 +148,28 @@
     <value>操作人姓名</value>
   </data>
   <data name="LogFormatParams" xml:space="preserve">
-    <value>参数：</value>
+    <value>参数</value>
   </data>
   <data name="LogFormatRole" xml:space="preserve">
     <value>角色</value>
+  </data>
+  <data name="LogFormatSqlParams" xml:space="preserve">
+    <value>Sql参数</value>
   </data>
   <data name="LogFormatThreadId" xml:space="preserve">
     <value>线程号</value>
   </data>
   <data name="LogFormatTime" xml:space="preserve">
-    <value>操作时间：{0}</value>
+    <value>操作时间</value>
   </data>
   <data name="LogFormatTotalSeconds" xml:space="preserve">
-    <value>已执行：{0} 秒</value>
+    <value>已执行(秒)</value>
   </data>
   <data name="LogFormatTraceId" xml:space="preserve">
-    <value>跟踪号：{0}</value>
+    <value>跟踪号</value>
   </data>
   <data name="LogFormatUrl" xml:space="preserve">
-    <value>Url: {0}</value>
+    <value>Url</value>
   </data>
   <data name="LogFormatUserId" xml:space="preserve">
     <value>操作人编号</value>

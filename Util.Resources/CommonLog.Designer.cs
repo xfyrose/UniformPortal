@@ -151,7 +151,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 参数：.
+        ///   Looks up a localized string similar to 参数.
         /// </summary>
         public static string LogFormatParams {
             get {
@@ -169,6 +169,15 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sql参数.
+        /// </summary>
+        public static string LogFormatSqlParams {
+            get {
+                return ResourceManager.GetString("LogFormatSqlParams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 线程号.
         /// </summary>
         public static string LogFormatThreadId {
@@ -178,7 +187,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 操作时间：{0}.
+        ///   Looks up a localized string similar to 操作时间.
         /// </summary>
         public static string LogFormatTime {
             get {
@@ -187,7 +196,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 已执行：{0} 秒.
+        ///   Looks up a localized string similar to 已执行(秒).
         /// </summary>
         public static string LogFormatTotalSeconds {
             get {
@@ -196,7 +205,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 跟踪号：{0}.
+        ///   Looks up a localized string similar to 跟踪号.
         /// </summary>
         public static string LogFormatTraceId {
             get {
@@ -205,7 +214,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Url: {0}.
+        ///   Looks up a localized string similar to Url.
         /// </summary>
         public static string LogFormatUrl {
             get {
