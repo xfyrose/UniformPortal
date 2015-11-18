@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F947FC0F-DE0B-4A46-94E1-BFB504D30BE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainEvent</RootNamespace>
+    <AssemblyName>DomainEvent</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ActionDelegatedEventHandler.cs" />
+    <Compile Include="Core\Configuration\AliasNode.cs" />
+    <Compile Include="Core\Configuration\AliasNodeCollection.cs" />
+    <Compile Include="Core\Configuration\DomainEventConfiguration.cs" />
+    <Compile Include="Core\Configuration\DomainEventConfigurationManager.cs" />
+    <Compile Include="Core\Configuration\DomainEventConfigurationWrapper.cs" />
+    <Compile Include="Core\Configuration\EventAggregatorNode.cs" />
+    <Compile Include="Core\Configuration\EventAggregatorNodeCollection.cs" />
+    <Compile Include="Core\Configuration\EventBusRootNode.cs" />
+    <Compile Include="Core\Configuration\EventHandlerNode.cs" />
+    <Compile Include="Core\Configuration\EventHandlerNodeCollection.cs" />
+    <Compile Include="Core\DomainEventAggregator.cs" />
+    <Compile Include="Core\DomainEventBase.cs" />
+    <Compile Include="Core\DomainEventBus.cs" />
+    <Compile Include="Core\DomainEventHandler.cs" />
+    <Compile Include="Core\DomainEventHandlerAppointment.cs" />
+    <Compile Include="Core\DomainEventWrapper.cs" />
+    <Compile Include="Core\HandlesAsynchronouslyAttribute.cs" />
+    <Compile Include="Core\IDomainEvent.cs" />
+    <Compile Include="Core\IDomainEventAggregator.cs" />
+    <Compile Include="Core\IDomainEventBus.cs" />
+    <Compile Include="Core\IDomainEventHandler.cs" />
+    <Compile Include="Core\IDomainEventHandler`.cs" />
+    <Compile Include="Fx\IoC\DependencyResolverFactory.cs" />
+    <Compile Include="Fx\IoC\IDependency.cs" />
+    <Compile Include="Fx\IoC\IDependencyResolver.cs" />
+    <Compile Include="Fx\IoC\IDependencyResolverFactory.cs" />
+    <Compile Include="Fx\IoC\InversionOfControl.cs" />
+    <Compile Include="Fx\Bootstrapper\Bootstrapper.cs" />
+    <Compile Include="Fx\Bootstrapper\IBootstrapperTask.cs" />
+    <Compile Include="Fx\Bootstrapper\IConfigurationSettings.cs" />
+    <Compile Include="Fx\Configuration\ConfigurationManagerWrapper.cs" />
+    <Compile Include="Fx\Configuration\IConfigurationManager.cs" />
+    <Compile Include="Fx\Extension.cs" />
+    <Compile Include="Fx\CollectionWrapper.cs" />
+    <Compile Include="Fx\DisposableResource.cs" />
+    <Compile Include="Fx\Helper\CommonHelper.cs" />
+    <Compile Include="Fx\Helper\MergePathHelper.cs" />
+    <Compile Include="Fx\Helper\Serializer.cs" />
+    <Compile Include="Fx\Helper\XmlHelper.cs" />
+    <Compile Include="Fx\MetaInterface\IMetaDomainEvent.cs" />
+    <Compile Include="Fx\MetaInterface\IMetaHandler.cs" />
+    <Compile Include="Fx\MetaInterface\IMetaInfrastructure.cs" />
+    <Compile Include="ProductSnapCreatedEvent.cs" />
+    <Compile Include="ProductSnapCreatedEventHandlerAppointment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
