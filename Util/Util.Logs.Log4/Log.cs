@@ -10,7 +10,7 @@ namespace Util.Logs.Log4
 {
     public class Log : ILog
     {
-        private log4net.ILog _log;
+        private readonly log4net.ILog _log;
 
         private Log(log4net.ILog log)
         {
@@ -228,31 +228,64 @@ namespace Util.Logs.Log4
             }
 
             Identity = SecurityContext.Identity;
+
+            return Identity;
+        }
+
+        private void Clear()
+        {
+            BusinessId = string.Empty;
+            Method = string.Empty;
+            Params.Clear();
+            Caption.Clear();
+            Content.Clear();
+            Sql.Clear();
+            SqlParams.Clear();
+            Exception = null;
+            ErrorMessage = string.Empty;
+            StackTrace = string.Empty;
         }
 
         public void Info()
         {
-            throw new NotImplementedException();
+            Execute(() =>
+            {
+                Level = LogLevel.Information;
+                _log.Info(GetMessage());
+            });
         }
 
         public void Warn()
         {
-            throw new NotImplementedException();
+            Execute(() =>
+            {
+                Level = LogLevel.Warning;
+                _log.Info(GetMessage());
+            });
         }
 
         public void Error()
         {
-            throw new NotImplementedException();
+            Execute(() =>
+            {
+                Level = LogLevel.Error;
+                _log.Info(GetMessage());
+            });
         }
 
         public void Fatal()
         {
-            throw new NotImplementedException();
+            Execute(() =>
+            {
+                Level = LogLevel.Fatal;
+                _log.Info(GetMessage());
+            });
         }
 
         public void Start()
         {
-            throw new NotImplementedException();
+            _test = new Test();
+            _test.Start();
         }
     }
 }

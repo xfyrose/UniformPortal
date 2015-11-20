@@ -6,20 +6,20 @@ namespace Util.Security
 {
     public class Identity : IIdentity
     {
-        public Identity()
-            : this(false, string.Empty)
-        {
-            
-        }
 
-        public Identity(bool isAuthenticated, string userId, string[] roleIds = null, string appliationId = "",
-            string tenantId = "")
+        public Identity(bool isAuthenticated, string userId, string[] roleIds = null, string appliationId = "", string tenantId = "")
         {
             IsAuthenticated = isAuthenticated;
             Name = userId;
             RoleIds = roleIds;
             ApplicationId = appliationId;
             TenantId = tenantId;
+        }
+
+        public Identity()
+            : this(false, string.Empty)
+        {
+
         }
 
         public string AuthenticationType => "Custom";
@@ -59,10 +59,9 @@ namespace Util.Security
             return true;
         }
 
-        public static UnauthorizedAccessException Unauthenticated()
+        public static UnauthenticatedIdentity Unauthenticated()
         {
-            return new UnauthorizedAccessException();
+            return new UnauthenticatedIdentity();
         }
-
     }
 }

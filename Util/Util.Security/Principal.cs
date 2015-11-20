@@ -4,15 +4,16 @@ namespace Util.Security
 {
     public class Principal : IPrincipal
     {
-        public Principal()
-            : this(new UnauthenticatedIdentity())
-        {
-            
-        }
 
         public Principal(Identity identity)
         {
             Identity = identity;
+        }
+
+        public Principal()
+            : this(new UnauthenticatedIdentity())
+        {
+            
         }
 
         public IIdentity Identity { get; private set; }

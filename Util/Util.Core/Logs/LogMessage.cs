@@ -1,4 +1,6 @@
-﻿namespace Util.Core.Logs
+﻿using Util.Core.Logs.Formats;
+
+namespace Util.Core.Logs
 {
     public class LogMessage
     {
@@ -30,7 +32,7 @@
 
         public override string ToString()
         {
-            return base.ToString();
+            return new LogMessageFormatter(this).Format();
         }
     }
 }
