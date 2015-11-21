@@ -17,15 +17,17 @@ namespace Util.Domains
 
 
         public TKey Id { get; private set; }
+        public TKey InsertedUserId { get; set; }
+        public string InsertedUserName { get; set; }
+        public DateTime? InsertedDateTime { get; set; }
+        public TKey UpdatedUserId { get; set; }
+        public string UpdatedUserName { get; set; }
+        public DateTime? UpdatedDateTime { get; set; }
+
         protected ILog Log { get; set; }
 
         public override bool Equals(object entity)
         {
-            if (entity == null)
-            {
-                return false;
-            }
-
             if (!(entity is EntityBase<TKey>))
             {
                 return false;
@@ -84,6 +86,8 @@ namespace Util.Domains
             {
                 results.Add(new ValidationResult("Id不能为空"));
             }
+
+            base.Validate();
         }
     }
 

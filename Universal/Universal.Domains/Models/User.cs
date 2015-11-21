@@ -1,20 +1,32 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Util.Domains;
 
 namespace Universal.Domains.Models
 {
-    public class User : AggregateRoot
+    public partial class User : AggregateRoot<string>
     {
-        public User(Guid id)
+        public User(string id)
             : base(id)
         {
-            
         }
 
         public User()
-            : this(Guid.Empty)
+            : this(string.Empty)
         {
-            
         }
+
+        [Required()]
+        [StringLength(32, )]
+        public string Name { get; set; }
+
+        public string Password { get; set; }
+        public string PasswordFormat { get; set; }
+        public string PasswordSalt { get; set; }
+    }
+
+    public partial class User
+    {
+        
     }
 }

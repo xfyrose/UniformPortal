@@ -7,7 +7,6 @@ namespace Util.Domains
         protected AggregateRoot(TKey id)
             : base(id)
         {
-            
         }
 
         public byte[] Version { get; set; }
@@ -18,7 +17,6 @@ namespace Util.Domains
         protected AggregateRoot(Guid id)
             : base(id)
         {
-            
         }
     }
 }

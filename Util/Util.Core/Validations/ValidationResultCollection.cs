@@ -8,10 +8,9 @@ namespace Util.Core.Validations
     {
         public ValidationResultCollection()
         {
-            _results = new List<ValidationResult>();
         }
 
-        private readonly List<ValidationResult> _results;
+        private readonly List<ValidationResult> _results = new List<ValidationResult>();
 
         public bool IsValid => _results.Count == 0;
 

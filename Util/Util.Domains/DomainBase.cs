@@ -8,12 +8,10 @@ namespace Util.Domains
     {
         protected DomainBase()
         {
-            _rules = new List<IValidationRule>();
-            _handler = new ValidationResultHandler();
         }
 
-        private readonly List<IValidationRule> _rules;
-        private IValidationResultHandler _handler;
+        private readonly List<IValidationRule> _rules = new List<IValidationRule>();
+        private IValidationResultHandler _handler = new ValidationResultHandler();
 
         public void SetValidationResultHandler(IValidationResultHandler handler)
         {
@@ -53,7 +51,6 @@ namespace Util.Domains
 
         protected virtual void Validate(ValidationResultCollection results)
         {
-            
         }
 
         private void HandleVlidationResult(ValidationResultCollection results)

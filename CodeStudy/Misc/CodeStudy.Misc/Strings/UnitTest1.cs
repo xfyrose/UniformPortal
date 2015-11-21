@@ -68,5 +68,12 @@ namespace CodeStudy.Misc.Strings
             Console.WriteLine(string.Empty.PadLeft(125, '-'));
             Console.WriteLine(new string('-', 125));
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Console.WriteLine("default(string)==null: {0}", default(string)==null);
+            Console.WriteLine("default(string)==string.Empty: {0}", default(string) == string.Empty);
+        }
     }
 }
