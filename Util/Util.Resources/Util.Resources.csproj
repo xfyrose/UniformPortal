@@ -51,7 +51,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommonLog.resx</DependentUpon>
     </Compile>
+    <Compile Include="Entity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entity.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Validate.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Common.resx">
@@ -61,6 +71,14 @@
     <EmbeddedResource Include="CommonLog.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CommonLog.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Entity.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validate.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Validate.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

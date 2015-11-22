@@ -17,7 +17,7 @@ namespace Universal.Domains.Models
         }
 
         [Required()]
-        [StringLength(32, )]
+        [StringLength(64, ErrorMessageResourceType = )]
         public string Name { get; set; }
 
         public string Password { get; set; }
@@ -27,6 +27,24 @@ namespace Universal.Domains.Models
 
     public partial class User
     {
-        
+        public override void Init()
+        {
+            base.Init();
+
+            if (InsertedDateTime == null)
+            {
+                InsertedDateTime = DateTime.Now;
+            }
+        }
+
+        protected override void AddDescriptions()
+        {
+            base.AddDescriptions();
+
+            AddDescription(Universal.Resource.User.Name, Name);
+            AddDescription(Universal.Resource.User.Password, Password);
+            AddDescription(Universal.Resource.User.PasswordFormat, PasswordFormat);
+            AddDescription(Universal.Resource.User.PasswordSalt, PasswordSalt);
+        }
     }
 }

@@ -24,6 +24,9 @@ namespace Util.Domains
         public string UpdatedUserName { get; set; }
         public DateTime? UpdatedDateTime { get; set; }
 
+        public bool IsEnabled { get; set; }
+        public bool IsDeleted { get; set; }
+
         protected ILog Log { get; set; }
 
         public override bool Equals(object entity)
@@ -67,7 +70,7 @@ namespace Util.Domains
             return !(entity1 == entity2);
         }
 
-        public void Init()
+        public virtual void Init()
         {
             if (Id.Equals(default(TKey)))
             {
@@ -89,6 +92,21 @@ namespace Util.Domains
 
             base.Validate();
         }
+
+        protected override void AddDescriptions()
+        {
+            base.AddDescriptions();
+
+            AddDescription(Util.Resources.Entity.Id, Id);
+            AddDescription(Util.Resources.Entity.InsertedUserId, InsertedUserId);
+            AddDescription(Util.Resources.Entity.InsertedUserName, InsertedUserName);
+            AddDescription(Util.Resources.Entity.InsertedDateTime, InsertedDateTime?.ToMillisecondString());
+            AddDescription(Util.Resources.Entity.UpdatedUserId, UpdatedUserId);
+            AddDescription(Util.Resources.Entity.UpdatedUserName, UpdatedUserName);
+            AddDescription(Util.Resources.Entity.UpdatedDateTime, UpdatedDateTime?.ToMillisecondString());
+            AddDescription(Util.Resources.Entity.IsEnabled, IsEnabled);
+            AddDescription(Util.Resources.Entity.IsDeleted, IsDeleted);
+        }
     }
 
     public abstract class EntityBase : EntityBase<Guid>
@@ -96,7 +114,7 @@ namespace Util.Domains
         protected EntityBase(Guid id)
             : base(id)
         {
-            
+            var a = nameof(Id);
         }
     }
 }

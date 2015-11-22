@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Universal.Resource {
+namespace Util.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Universal.Resource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class User {
+    public class Entity {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal User() {
+        internal Entity() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Universal.Resource {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Universal.Resource.User", typeof(User).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Util.Resources.Entity", typeof(Entity).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,83 @@ namespace Universal.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 用户名.
+        ///   Looks up a localized string similar to Id.
         /// </summary>
-        public static string Name {
+        public static string Id {
             get {
-                return ResourceManager.GetString("Name", resourceCulture);
+                return ResourceManager.GetString("Id", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 密码.
+        ///   Looks up a localized string similar to 创建时间.
         /// </summary>
-        public static string Password {
+        public static string InsertedDateTime {
             get {
-                return ResourceManager.GetString("Password", resourceCulture);
+                return ResourceManager.GetString("InsertedDateTime", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 密码的加密格式.
+        ///   Looks up a localized string similar to 创建者Id.
         /// </summary>
-        public static string PasswordFormat {
+        public static string InsertedUserId {
             get {
-                return ResourceManager.GetString("PasswordFormat", resourceCulture);
+                return ResourceManager.GetString("InsertedUserId", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 密码的混淆码.
+        ///   Looks up a localized string similar to 创建者名称.
         /// </summary>
-        public static string PasswordSalt {
+        public static string InsertedUserName {
             get {
-                return ResourceManager.GetString("PasswordSalt", resourceCulture);
+                return ResourceManager.GetString("InsertedUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 是否已删除.
+        /// </summary>
+        public static string IsDeleted {
+            get {
+                return ResourceManager.GetString("IsDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 是否禁用.
+        /// </summary>
+        public static string IsEnabled {
+            get {
+                return ResourceManager.GetString("IsEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改时间.
+        /// </summary>
+        public static string UpdatedDateTime {
+            get {
+                return ResourceManager.GetString("UpdatedDateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改者Id.
+        /// </summary>
+        public static string UpdatedUserId {
+            get {
+                return ResourceManager.GetString("UpdatedUserId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改者名称.
+        /// </summary>
+        public static string UpdatedUserName {
+            get {
+                return ResourceManager.GetString("UpdatedUserName", resourceCulture);
             }
         }
     }

@@ -21,5 +21,11 @@ namespace CodeStudy.Misc.DateTimes
             Console.WriteLine(ts1.Days);
             Console.WriteLine(ts1.TotalDays);
         }
+
+        [TestMethod]
+        public void TestMethod_ToString()
+        {
+            Console.WriteLine("DateTime.Now.ToString(): {0}", DateTime.Now.ToString());
+        }
     }
 }

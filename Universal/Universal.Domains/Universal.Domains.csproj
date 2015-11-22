@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Universal.Resource\Universal.Resource.csproj">
+      <Project>{9214d9dc-d7bf-49c5-9859-1fcf047b72d9}</Project>
+      <Name>Universal.Resource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Util\Util.Core\Util.Core.csproj">
       <Project>{a8b7c8ee-7d75-4f2d-b42d-66dd4795bda2}</Project>
       <Name>Util.Core</Name>

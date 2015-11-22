@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Universal.Resource {
+namespace Util.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Universal.Resource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class User {
+    public class Validate {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal User() {
+        internal Validate() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Universal.Resource {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Universal.Resource.User", typeof(User).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Util.Resources.Validate", typeof(Validate).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,20 @@ namespace Universal.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 用户名.
+        ///   Looks up a localized string similar to {0}长度不可超过{1}.
         /// </summary>
-        public static string Name {
+        public static string StringLengthMax {
             get {
-                return ResourceManager.GetString("Name", resourceCulture);
+                return ResourceManager.GetString("StringLengthMax", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 密码.
+        ///   Looks up a localized string similar to {0}长度不可超过{1}、不可小于{2}.
         /// </summary>
-        public static string Password {
+        public static string StringLengthMaxMin {
             get {
-                return ResourceManager.GetString("Password", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 密码的加密格式.
-        /// </summary>
-        public static string PasswordFormat {
-            get {
-                return ResourceManager.GetString("PasswordFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 密码的混淆码.
-        /// </summary>
-        public static string PasswordSalt {
-            get {
-                return ResourceManager.GetString("PasswordSalt", resourceCulture);
+                return ResourceManager.GetString("StringLengthMaxMin", resourceCulture);
             }
         }
     }
