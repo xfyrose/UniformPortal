@@ -1,0 +1,53 @@
+﻿@using CodeStudy.UI.ProMvc5.Models;
+
+@model IEnumerable<Album>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Search", "StoreManager", FormMethod.Get, new {target = "_blank"}))
+        {
+            @Html.Editor("q")
+
+            <input type="submit" value="Search"/>
+        }
+    </div>
+
+<hr/>
+
+<div>
+    <table>
+        <tr>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        @foreach (Album item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Artist.Name
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @($"{item.Price:c}")
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+</body>
+</html>

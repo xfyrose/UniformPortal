@@ -1,0 +1,14 @@
+﻿@using CodeStudy.UI.ProMvc5.Models
+
+@model List<Artist>
+
+<div id="searchresults">
+    <ul>
+        @foreach (Artist item in Model)
+        {
+            <li>
+                @item.Name
+            </li>
+        }
+    </ul>
+</div>

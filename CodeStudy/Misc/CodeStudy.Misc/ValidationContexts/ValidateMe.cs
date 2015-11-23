@@ -116,6 +116,8 @@ namespace CodeStudy.Misc.ValidationContexts
 
         [MaxLength(10)]
         public string MeName { get; set; }
+
+        //public string MeName2 { get; set; }
     }
 
     //[MetadataType(typeof(ValidateMeMetaData))]

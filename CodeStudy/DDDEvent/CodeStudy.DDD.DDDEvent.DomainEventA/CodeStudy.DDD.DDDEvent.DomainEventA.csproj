@@ -43,6 +43,12 @@
     <Compile Include="ProductSnapCreatedEventHandlerA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeStudy.DDD.DDDEvent.DomainEvent\CodeStudy.DDD.DDDEvent.DomainEvent.csproj">
+      <Project>{f947fc0f-de0b-4a46-94e1-bfb504d30be3}</Project>
+      <Name>CodeStudy.DDD.DDDEvent.DomainEvent</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

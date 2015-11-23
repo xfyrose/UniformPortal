@@ -61,6 +61,15 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}不可为空.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}长度不可超过{1}.
         /// </summary>
         public static string StringLengthMax {

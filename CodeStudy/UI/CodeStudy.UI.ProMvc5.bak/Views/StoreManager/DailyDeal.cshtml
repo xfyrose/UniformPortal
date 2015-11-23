@@ -1,0 +1,30 @@
+﻿@using CodeStudy.UI.ProMvc5.Models;
+
+@model Album
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Your daily deal: @Model.Title</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            <img alt="@Model.Title" src="@Url.Content(Model.AlbumArtUrl)"/>
+        </p>
+
+        <div id="album-details">
+            <p>
+                <em>Artist:</em>
+                @Model.Artist.Name
+            </p>
+            <p>
+                <em>Price:</em>
+                @($"{Model.Price:F}")
+            </p>
+
+            @Html.ActionLink("Add to cart", "AddToCart",
+           "ShoppingCart",
+           new { id = Model.Id},
+           new { @class = "btn btn-primary"})
+        </div>
+    </div>
+</div>

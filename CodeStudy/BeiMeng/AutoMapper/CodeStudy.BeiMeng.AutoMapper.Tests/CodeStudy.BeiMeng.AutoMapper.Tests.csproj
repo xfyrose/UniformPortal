@@ -54,6 +54,12 @@
     <Compile Include="AutoMapTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeStudy.BeiMeng.AutoMapper\CodeStudy.BeiMeng.AutoMapper.csproj">
+      <Project>{aebf7da9-54a4-4561-b711-e11b55d4467e}</Project>
+      <Name>CodeStudy.BeiMeng.AutoMapper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -16,17 +16,15 @@ namespace Universal.Domains.Models
         {
         }
 
-        [Required()]
-        [StringLength(64, ErrorMessageResourceType = )]
+        [Required(ErrorMessageResourceType = typeof(Util.Resources.Validate), ErrorMessageResourceName = "Required")]
+        [StringLength(64, ErrorMessageResourceType = typeof(Util.Resources.Validate), ErrorMessageResourceName = "StringLengthMax")]
         public string Name { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(Util.Resources.Validate), ErrorMessageResourceName = "Required")]
         public string Password { get; set; }
         public string PasswordFormat { get; set; }
         public string PasswordSalt { get; set; }
-    }
 
-    public partial class User
-    {
         public override void Init()
         {
             base.Init();
@@ -41,10 +39,10 @@ namespace Universal.Domains.Models
         {
             base.AddDescriptions();
 
-            AddDescription(Universal.Resource.User.Name, Name);
-            AddDescription(Universal.Resource.User.Password, Password);
-            AddDescription(Universal.Resource.User.PasswordFormat, PasswordFormat);
-            AddDescription(Universal.Resource.User.PasswordSalt, PasswordSalt);
+            AddDescription(nameof(Name), Name);
+            AddDescription(nameof(Password), Password);
+            AddDescription(nameof(PasswordFormat), PasswordFormat);
+            AddDescription(nameof(PasswordSalt), PasswordSalt);
         }
     }
 }

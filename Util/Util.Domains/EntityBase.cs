@@ -15,7 +15,6 @@ namespace Util.Domains
             Log = Util.Logs.Log4.Log.GetContextLog(this);
         }
 
-
         public TKey Id { get; private set; }
         public TKey InsertedUserId { get; set; }
         public string InsertedUserName { get; set; }
@@ -97,15 +96,15 @@ namespace Util.Domains
         {
             base.AddDescriptions();
 
-            AddDescription(Util.Resources.Entity.Id, Id);
-            AddDescription(Util.Resources.Entity.InsertedUserId, InsertedUserId);
-            AddDescription(Util.Resources.Entity.InsertedUserName, InsertedUserName);
-            AddDescription(Util.Resources.Entity.InsertedDateTime, InsertedDateTime?.ToMillisecondString());
-            AddDescription(Util.Resources.Entity.UpdatedUserId, UpdatedUserId);
-            AddDescription(Util.Resources.Entity.UpdatedUserName, UpdatedUserName);
-            AddDescription(Util.Resources.Entity.UpdatedDateTime, UpdatedDateTime?.ToMillisecondString());
-            AddDescription(Util.Resources.Entity.IsEnabled, IsEnabled);
-            AddDescription(Util.Resources.Entity.IsDeleted, IsDeleted);
+            AddDescription(nameof(Id), Id);
+            AddDescription(nameof(InsertedUserId), InsertedUserId);
+            AddDescription(nameof(InsertedUserName), InsertedUserName);
+            AddDescription(nameof(InsertedDateTime), InsertedDateTime?.ToMillisecondString());
+            AddDescription(nameof(UpdatedUserId), UpdatedUserId);
+            AddDescription(nameof(UpdatedUserName), UpdatedUserName);
+            AddDescription(nameof(UpdatedDateTime), UpdatedDateTime?.ToMillisecondString());
+            AddDescription(nameof(IsEnabled), IsEnabled);
+            AddDescription(nameof(IsDeleted), IsDeleted);
         }
     }
 
@@ -114,7 +113,6 @@ namespace Util.Domains
         protected EntityBase(Guid id)
             : base(id)
         {
-            var a = nameof(Id);
         }
     }
 }

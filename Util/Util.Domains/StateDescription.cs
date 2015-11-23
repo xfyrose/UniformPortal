@@ -32,12 +32,19 @@ namespace Util.Domains
 
         protected void AddDescription<T>(string name, T value)
         {
-            if (value.ToStr().IsEmpty())
-            {
-                return;
-            }
+            //if (value.ToStr().IsEmpty())
+            //{
+            //    return;
+            //}
 
             _description.AppendFormat("{0}:{1}", name, value);
         }
+
+        //protected void AddDescription<T>(Expression<Func<T, TProperty>> expression, T value)
+        //{
+        //    string name = GetName(expression);
+
+        //    AddDescription(name, value);
+        //}
     }
 }

@@ -184,5 +184,15 @@ namespace CodeStudy.Misc.ValidationContexts
                 Console.WriteLine("ErrorMessage: {0}", result.ErrorMessage);
             });
         }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+            ValidateMe me = new ValidateMe();
+
+            Console.WriteLine(nameof(me.MeName));
+            Console.WriteLine(nameof(me));
+            Console.WriteLine(nameof(ValidateMe));
+        }
     }
 }
