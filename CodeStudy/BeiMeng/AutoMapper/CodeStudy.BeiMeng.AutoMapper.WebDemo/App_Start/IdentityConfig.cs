@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using BeiDream.WebDemo.Models;
+using CodeStudy.BeiMeng.AutoMapper.WebDemo.Models;
 
-namespace BeiDream.WebDemo
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo
 {
     public class EmailService : IIdentityMessageService
     {

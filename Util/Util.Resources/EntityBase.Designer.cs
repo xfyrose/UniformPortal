@@ -176,5 +176,86 @@ namespace Util.Resources {
                 return ResourceManager.GetString("UpdatedUserName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 创建者Id长度不能大于{1}.
+        /// </summary>
+        public static string ValidateInsertedUserIdStringLengthMax {
+            get {
+                return ResourceManager.GetString("ValidateInsertedUserIdStringLengthMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 创建者Id长度不能小于{1}.
+        /// </summary>
+        public static string ValidateInsertedUserIdStringLengthMin {
+            get {
+                return ResourceManager.GetString("ValidateInsertedUserIdStringLengthMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 创建者名称长度不能大于{1}.
+        /// </summary>
+        public static string ValidateInsertedUserNameStringLengthMax {
+            get {
+                return ResourceManager.GetString("ValidateInsertedUserNameStringLengthMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 创建者名称长度不能小于{1}.
+        /// </summary>
+        public static string ValidateInsertedUserNameStringLengthMin {
+            get {
+                return ResourceManager.GetString("ValidateInsertedUserNameStringLengthMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改者Id长度不能大于{1}.
+        /// </summary>
+        public static string ValidateUpdatedUserIdStringLengthMax {
+            get {
+                return ResourceManager.GetString("ValidateUpdatedUserIdStringLengthMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改者Id长度不能小于{1}.
+        /// </summary>
+        public static string ValidateUpdatedUserIdStringLengthMin {
+            get {
+                return ResourceManager.GetString("ValidateUpdatedUserIdStringLengthMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改者名称长度不能大于{1}.
+        /// </summary>
+        public static string ValidateUpdatedUserNameStringLengthMax {
+            get {
+                return ResourceManager.GetString("ValidateUpdatedUserNameStringLengthMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改者名称长度不能小于{1}.
+        /// </summary>
+        public static string ValidateUpdatedUserNameStringLengthMin {
+            get {
+                return ResourceManager.GetString("ValidateUpdatedUserNameStringLengthMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 版本号.
+        /// </summary>
+        public static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
     }
 }

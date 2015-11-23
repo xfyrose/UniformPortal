@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(BeiDream.WebDemo.Startup))]
-namespace BeiDream.WebDemo
+[assembly: OwinStartupAttribute(typeof(CodeStudy.BeiMeng.AutoMapper.WebDemo.Startup))]
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo
 {
     public partial class Startup
     {

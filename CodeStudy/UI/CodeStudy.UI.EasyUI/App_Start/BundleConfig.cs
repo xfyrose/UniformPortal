@@ -27,12 +27,13 @@ namespace CodeStudy.UI.EasyUI
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            //custon
+            //custom
             bundles.Add(new ScriptBundle("~/bundles/easyui").Include(
                 "~/Scripts/jquery.easyui-{version}.js", "~/Scripts/locale/easyui-lang-zh_CN.js"));
 
             bundles.Add(new ScriptBundle("~/Content/easyui").Include(
                 "~/Content/themes/default/easyui.css", "~/Content/themes/icon.css"));
+
         }
     }
 }

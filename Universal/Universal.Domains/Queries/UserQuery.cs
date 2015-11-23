@@ -10,11 +10,11 @@ namespace Universal.Domains.Queries
 {
     public class UserQuery : EntityBaseQuery<string>
     {
-        [Display(ResourceType = typeof(Universal.Resource.User), Name = nameof(Universal.Resource.User.Id))]
+        [Display(ResourceType = typeof(Universal.Resources.User), Name = nameof(Universal.Resources.User.Id))]
         public string Id { get; set; }
 
         private string _name;
-        [Display(ResourceType = typeof (Universal.Resource.User), Name = nameof(Universal.Resource.User.Name))]
+        [Display(ResourceType = typeof (Universal.Resources.User), Name = nameof(Universal.Resources.User.Name))]
         public string Name
         {
             get

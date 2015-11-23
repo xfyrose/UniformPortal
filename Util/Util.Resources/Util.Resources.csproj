@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommonLog.resx</DependentUpon>
     </Compile>
+    <Compile Include="Consts.cs" />
     <Compile Include="EntityBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

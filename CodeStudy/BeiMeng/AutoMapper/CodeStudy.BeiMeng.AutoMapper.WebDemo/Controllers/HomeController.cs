@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using BeiDream.AutoMapper;
 using BeiDream.AutoMapper.Reflection;
 
-namespace BeiDream.WebDemo.Controllers
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo.Controllers
 {
     public class HomeController : Controller
     {

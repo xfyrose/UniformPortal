@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using BeiDream.WebDemo.Models;
+using CodeStudy.BeiMeng.AutoMapper.WebDemo.Models;
 
-namespace BeiDream.WebDemo
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo
 {
     public partial class Startup
     {

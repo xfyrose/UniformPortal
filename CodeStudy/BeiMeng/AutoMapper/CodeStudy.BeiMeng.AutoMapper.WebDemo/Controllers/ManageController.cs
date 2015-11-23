@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using BeiDream.WebDemo.Models;
+using CodeStudy.BeiMeng.AutoMapper.WebDemo.Models;
 
-namespace BeiDream.WebDemo.Controllers
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo.Controllers
 {
     [Authorize]
     public class ManageController : Controller

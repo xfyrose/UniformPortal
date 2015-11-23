@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace BeiDream.WebDemo
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo
 {
     public class BundleConfig
     {

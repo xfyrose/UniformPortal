@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BeiDream.WebDemo.Models
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace BeiDream.WebDemo.Models
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo.Models
 {
     public class IndexViewModel
     {

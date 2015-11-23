@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BeiDream.WebDemo
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo
 {
     public class RouteConfig
     {

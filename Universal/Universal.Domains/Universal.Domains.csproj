@@ -59,9 +59,9 @@
       <Project>{5fbf5c67-b60c-4cce-a2e6-06ba78bfbb31}</Project>
       <Name>Util.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Universal.Resource\Universal.Resource.csproj">
+    <ProjectReference Include="..\Universal.Resources\Universal.Resources.csproj">
       <Project>{9214d9dc-d7bf-49c5-9859-1fcf047b72d9}</Project>
-      <Name>Universal.Resource</Name>
+      <Name>Universal.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace BeiDream.WebDemo
-{
+namespace CodeStudy.BeiMeng.AutoMapper.WebDemo
+{ 
     public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)

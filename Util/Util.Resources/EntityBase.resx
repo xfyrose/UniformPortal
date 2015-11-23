@@ -156,4 +156,31 @@
   <data name="UpdatedUserName" xml:space="preserve">
     <value>修改者名称</value>
   </data>
+  <data name="ValidateInsertedUserIdStringLengthMax" xml:space="preserve">
+    <value>创建者Id长度不能大于{1}</value>
+  </data>
+  <data name="ValidateInsertedUserIdStringLengthMin" xml:space="preserve">
+    <value>创建者Id长度不能小于{1}</value>
+  </data>
+  <data name="ValidateInsertedUserNameStringLengthMax" xml:space="preserve">
+    <value>创建者名称长度不能大于{1}</value>
+  </data>
+  <data name="ValidateInsertedUserNameStringLengthMin" xml:space="preserve">
+    <value>创建者名称长度不能小于{1}</value>
+  </data>
+  <data name="ValidateUpdatedUserIdStringLengthMax" xml:space="preserve">
+    <value>修改者Id长度不能大于{1}</value>
+  </data>
+  <data name="ValidateUpdatedUserIdStringLengthMin" xml:space="preserve">
+    <value>修改者Id长度不能小于{1}</value>
+  </data>
+  <data name="ValidateUpdatedUserNameStringLengthMax" xml:space="preserve">
+    <value>修改者名称长度不能大于{1}</value>
+  </data>
+  <data name="ValidateUpdatedUserNameStringLengthMin" xml:space="preserve">
+    <value>修改者名称长度不能小于{1}</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本号</value>
+  </data>
 </root>
