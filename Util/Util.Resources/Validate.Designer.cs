@@ -70,7 +70,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}长度不可超过{1}.
+        ///   Looks up a localized string similar to {0}长度不可大于{1}.
         /// </summary>
         public static string StringLengthMax {
             get {
@@ -79,7 +79,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}长度不可超过{1}、不可小于{2}.
+        ///   Looks up a localized string similar to {0}长度不可大于{1}、不可小于{2}.
         /// </summary>
         public static string StringLengthMaxMin {
             get {

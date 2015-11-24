@@ -7,21 +7,6 @@ namespace Util.Core
 {
     public static class Reflection
     {
-        //public static string GetDescription<T>(Type type, string memberName)
-        //{
-        //    if (type == null)
-        //    {
-        //        return string.Empty;
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(memberName))
-        //    {
-        //        return string.Empty;
-        //    }
-
-        //    return GetDescription(type, type.GetField(memberName));
-        //}
-
         public static string GetDescription(Type type, string memberName)
         {
             if (type == null)

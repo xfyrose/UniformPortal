@@ -51,7 +51,9 @@
     <Compile Include="Contexts\WebContext.cs" />
     <Compile Include="Contexts\WindowsContext.cs" />
     <Compile Include="Conv.cs" />
+    <Compile Include="Datas\IUnitOfWork.cs" />
     <Compile Include="Enum.cs" />
+    <Compile Include="IDependency.cs" />
     <Compile Include="INullObject.cs" />
     <Compile Include="Logs\Formats\BusinessFormatter.cs" />
     <Compile Include="Logs\Formats\CaptionFormatter.cs" />

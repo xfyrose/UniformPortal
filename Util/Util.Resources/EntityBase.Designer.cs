@@ -124,7 +124,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 启用.
+        ///   Looks up a localized string similar to 已启用.
         /// </summary>
         public static string IsEnabled {
             get {

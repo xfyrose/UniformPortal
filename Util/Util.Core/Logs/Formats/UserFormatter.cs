@@ -13,9 +13,9 @@ namespace Util.Core.Logs.Formats
 
         public override string Format()
         {
-            Add(CommonLog.LogFormatUserId, Message.UserId);
-            Add(CommonLog.LogFormatOperator, Message.Operator);
-            Add(CommonLog.LogFormatRole, Message.Role);
+            Add(Util.Resources.LogMessage.UserId, Message.UserId);
+            Add(Util.Resources.LogMessage.Operator, Message.Operator);
+            Add(Util.Resources.LogMessage.Role, Message.Role);
 
             return base.Format();
         }

@@ -121,9 +121,9 @@
     <value>{0}不可为空</value>
   </data>
   <data name="StringLengthMax" xml:space="preserve">
-    <value>{0}长度不可超过{1}</value>
+    <value>{0}长度不可大于{1}</value>
   </data>
   <data name="StringLengthMaxMin" xml:space="preserve">
-    <value>{0}长度不可超过{1}、不可小于{2}</value>
+    <value>{0}长度不可大于{1}、不可小于{2}</value>
   </data>
 </root>

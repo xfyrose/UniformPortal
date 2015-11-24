@@ -1,5 +1,4 @@
 ﻿using System;
-using Util.Resources;
 
 namespace Util.Core.Logs.Formats
 {
@@ -18,7 +17,7 @@ namespace Util.Core.Logs.Formats
                 return string.Empty;
             }
 
-            Add(CommonLog.LogFormatContent);
+            Add($"{Util.Resources.LogMessage.Content}:");
             Add(Message.Content);
 
             return base.Format();

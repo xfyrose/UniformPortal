@@ -139,7 +139,7 @@
     <value>逻辑删除</value>
   </data>
   <data name="IsEnabled" xml:space="preserve">
-    <value>启用</value>
+    <value>已启用</value>
   </data>
   <data name="UpdatedDateTime" xml:space="preserve">
     <value>修改时间</value>

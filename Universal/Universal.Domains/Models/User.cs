@@ -16,14 +16,14 @@ namespace Universal.Domains.Models
         {
         }
 
-        [Required(ErrorMessageResourceType = typeof(Util.Resources.Validate), ErrorMessageResourceName = "Required")]
-        [StringLength(64, ErrorMessageResourceType = typeof(Util.Resources.Validate), ErrorMessageResourceName = "StringLengthMax")]
-        public string Name { get; set; }
+        [Required(ErrorMessageResourceType = typeof(Universal.Resources.User), ErrorMessageResourceName = nameof(Universal.Resources.User.ValidateNameRequired))]
+        [StringLength(Util.Resources.Consts.UserNameLengthMax, ErrorMessageResourceType = typeof(Universal.Resources.User), ErrorMessageResourceName = nameof(Universal.Resources.User.ValidateNameStringLengthMax))]
+        public virtual string Name { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Util.Resources.Validate), ErrorMessageResourceName = "Required")]
-        public string Password { get; set; }
-        public string PasswordFormat { get; set; }
-        public string PasswordSalt { get; set; }
+        [Required(ErrorMessageResourceType = typeof(Universal.Resources.User), ErrorMessageResourceName = nameof(Universal.Resources.User.ValidatePasswordRequired))]
+        public virtual string Password { get; set; }
+        public virtual string PasswordFormat { get; set; }
+        public virtual string PasswordSalt { get; set; }
 
         public override void Init()
         {

@@ -18,7 +18,7 @@ namespace Util.Core.Logs.Formats
                 return string.Empty;
             }
 
-            Add($"{CommonLog.LogFormatSqlParams}：");
+            Add($"{Util.Resources.LogMessage.SqlParams}：");
             Add(Message.SqlParams);
 
             return base.Format();

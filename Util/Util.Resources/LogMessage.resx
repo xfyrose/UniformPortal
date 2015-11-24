@@ -117,61 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContextKey" xml:space="preserve">
-    <value>Util.Logs.ContextLogger</value>
+  <data name="Application" xml:space="preserve">
+    <value>应用系统</value>
   </data>
-  <data name="LogFormatBusinessId" xml:space="preserve">
+  <data name="BusinessId" xml:space="preserve">
     <value>业务编号</value>
   </data>
-  <data name="LogFormatCaption" xml:space="preserve">
+  <data name="Caption" xml:space="preserve">
     <value>标题</value>
   </data>
-  <data name="LogFormatClass" xml:space="preserve">
+  <data name="Category" xml:space="preserve">
+    <value>分类</value>
+  </data>
+  <data name="Class" xml:space="preserve">
     <value>类名</value>
   </data>
-  <data name="LogFormatContent" xml:space="preserve">
-    <value>内容：</value>
+  <data name="Content" xml:space="preserve">
+    <value>内容</value>
   </data>
-  <data name="LogFormatHost" xml:space="preserve">
+  <data name="ContextKey" xml:space="preserve">
+    <value>ContextLogger</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ErrorCode" xml:space="preserve">
+    <value>错误代码</value>
+  </data>
+  <data name="Host" xml:space="preserve">
     <value>主机</value>
   </data>
-  <data name="LogFormatIp" xml:space="preserve">
-    <value>IP</value>
+  <data name="Ip" xml:space="preserve">
+    <value>IP地址</value>
   </data>
-  <data name="LogFormatLogLevel" xml:space="preserve">
-    <value>{0} &gt;&gt; </value>
+  <data name="Level" xml:space="preserve">
+    <value>{0} &gt;&gt;</value>
   </data>
-  <data name="LogFormatMethod" xml:space="preserve">
+  <data name="Method" xml:space="preserve">
     <value>方法</value>
   </data>
-  <data name="LogFormatOperator" xml:space="preserve">
-    <value>操作人姓名</value>
+  <data name="Operator" xml:space="preserve">
+    <value>操作人名称</value>
   </data>
-  <data name="LogFormatParams" xml:space="preserve">
+  <data name="Params" xml:space="preserve">
     <value>参数</value>
   </data>
-  <data name="LogFormatRole" xml:space="preserve">
+  <data name="Role" xml:space="preserve">
     <value>角色</value>
   </data>
-  <data name="LogFormatSqlParams" xml:space="preserve">
+  <data name="Sql" xml:space="preserve">
+    <value>Sql语句</value>
+  </data>
+  <data name="SqlParams" xml:space="preserve">
     <value>Sql参数</value>
   </data>
-  <data name="LogFormatThreadId" xml:space="preserve">
+  <data name="StackTrace" xml:space="preserve">
+    <value>堆栈跟踪</value>
+  </data>
+  <data name="Tenant" xml:space="preserve">
+    <value>租户</value>
+  </data>
+  <data name="ThreadId" xml:space="preserve">
     <value>线程号</value>
   </data>
-  <data name="LogFormatTime" xml:space="preserve">
-    <value>操作时间</value>
+  <data name="Time" xml:space="preserve">
+    <value>操作开始时间</value>
   </data>
-  <data name="LogFormatTotalSeconds" xml:space="preserve">
+  <data name="TotalSeconds" xml:space="preserve">
     <value>已执行(秒)</value>
   </data>
-  <data name="LogFormatTraceId" xml:space="preserve">
+  <data name="TraceId" xml:space="preserve">
     <value>跟踪号</value>
   </data>
-  <data name="LogFormatUrl" xml:space="preserve">
+  <data name="Url" xml:space="preserve">
     <value>Url</value>
   </data>
-  <data name="LogFormatUserId" xml:space="preserve">
-    <value>操作人编号</value>
+  <data name="UserId" xml:space="preserve">
+    <value>操作人Id</value>
   </data>
 </root>

@@ -106,20 +106,38 @@ namespace Universal.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 用户名称长度不能大于{1}.
+        ///   Looks up a localized string similar to 用户名称不可为空.
         /// </summary>
-        public static string ValidateNameLengthMax {
+        public static string ValidateNameRequired {
             get {
-                return ResourceManager.GetString("ValidateNameLengthMax", resourceCulture);
+                return ResourceManager.GetString("ValidateNameRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 用户名称长度不能小于{1}.
+        ///   Looks up a localized string similar to 用户名称长度不能大于{1}.
         /// </summary>
-        public static string ValidateNameLengthMin {
+        public static string ValidateNameStringLengthMax {
             get {
-                return ResourceManager.GetString("ValidateNameLengthMin", resourceCulture);
+                return ResourceManager.GetString("ValidateNameStringLengthMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 用户名称长度不能大于{1}、不能小于{2}.
+        /// </summary>
+        public static string ValidateNameStringLengthMaxMin {
+            get {
+                return ResourceManager.GetString("ValidateNameStringLengthMaxMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 密码不可为空.
+        /// </summary>
+        public static string ValidatePasswordRequired {
+            get {
+                return ResourceManager.GetString("ValidatePasswordRequired", resourceCulture);
             }
         }
     }

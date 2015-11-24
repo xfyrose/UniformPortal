@@ -4,7 +4,7 @@
     {
         public static string GetLogContextKey()
         {
-            return Util.Resources.CommonLog.ContextKey;
+            return Util.Resources.LogMessage.ContextKey;
         } 
     }
 }

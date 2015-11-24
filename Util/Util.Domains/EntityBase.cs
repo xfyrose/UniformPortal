@@ -12,21 +12,21 @@ namespace Util.Domains
         protected EntityBase(TKey id)
         {
             Id = id;
-            Log = Util.Logs.Log4.Log.GetContextLog(this);
+            //Log = Util.Logs.Log4.Log.GetContextLog(this);
         }
 
-        public TKey Id { get; private set; }
-        public TKey InsertedUserId { get; set; }
-        public string InsertedUserName { get; set; }
-        public DateTime? InsertedDateTime { get; set; }
-        public TKey UpdatedUserId { get; set; }
-        public string UpdatedUserName { get; set; }
-        public DateTime? UpdatedDateTime { get; set; }
+        public virtual TKey Id { get; set; }
+        public virtual TKey InsertedUserId { get; set; }
+        public virtual string InsertedUserName { get; set; }
+        public virtual DateTime? InsertedDateTime { get; set; }
+        public virtual TKey UpdatedUserId { get; set; }
+        public virtual string UpdatedUserName { get; set; }
+        public virtual DateTime? UpdatedDateTime { get; set; }
 
-        public bool IsEnabled { get; set; }
-        public bool IsDeleted { get; set; }
+        public virtual bool IsEnabled { get; set; }
+        public virtual bool IsDeleted { get; set; }
 
-        protected ILog Log { get; set; }
+        protected virtual ILog Log { get; set; } = Util.Logs.Log4.Log.GetContextLog(typeof(EntityBase<TKey>));
 
         public override bool Equals(object entity)
         {

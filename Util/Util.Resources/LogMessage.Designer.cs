@@ -22,14 +22,14 @@ namespace Util.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class CommonLog {
+    public class LogMessage {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CommonLog() {
+        internal LogMessage() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Util.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Util.Resources.CommonLog", typeof(CommonLog).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Util.Resources.LogMessage", typeof(LogMessage).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,61 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Util.Logs.ContextLogger.
+        ///   Looks up a localized string similar to 应用系统.
+        /// </summary>
+        public static string Application {
+            get {
+                return ResourceManager.GetString("Application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 业务编号.
+        /// </summary>
+        public static string BusinessId {
+            get {
+                return ResourceManager.GetString("BusinessId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 标题.
+        /// </summary>
+        public static string Caption {
+            get {
+                return ResourceManager.GetString("Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 分类.
+        /// </summary>
+        public static string Category {
+            get {
+                return ResourceManager.GetString("Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 类名.
+        /// </summary>
+        public static string Class {
+            get {
+                return ResourceManager.GetString("Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 内容.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ContextLogger.
         /// </summary>
         public static string ContextKey {
             get {
@@ -70,164 +124,173 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 业务编号.
+        ///   Looks up a localized string similar to 错误.
         /// </summary>
-        public static string LogFormatBusinessId {
+        public static string Error {
             get {
-                return ResourceManager.GetString("LogFormatBusinessId", resourceCulture);
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 标题.
+        ///   Looks up a localized string similar to 错误代码.
         /// </summary>
-        public static string LogFormatCaption {
+        public static string ErrorCode {
             get {
-                return ResourceManager.GetString("LogFormatCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 类名.
-        /// </summary>
-        public static string LogFormatClass {
-            get {
-                return ResourceManager.GetString("LogFormatClass", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 内容：.
-        /// </summary>
-        public static string LogFormatContent {
-            get {
-                return ResourceManager.GetString("LogFormatContent", resourceCulture);
+                return ResourceManager.GetString("ErrorCode", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 主机.
         /// </summary>
-        public static string LogFormatHost {
+        public static string Host {
             get {
-                return ResourceManager.GetString("LogFormatHost", resourceCulture);
+                return ResourceManager.GetString("Host", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IP.
+        ///   Looks up a localized string similar to IP地址.
         /// </summary>
-        public static string LogFormatIp {
+        public static string Ip {
             get {
-                return ResourceManager.GetString("LogFormatIp", resourceCulture);
+                return ResourceManager.GetString("Ip", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} &gt;&gt; .
+        ///   Looks up a localized string similar to {0} &gt;&gt;.
         /// </summary>
-        public static string LogFormatLogLevel {
+        public static string Level {
             get {
-                return ResourceManager.GetString("LogFormatLogLevel", resourceCulture);
+                return ResourceManager.GetString("Level", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 方法.
         /// </summary>
-        public static string LogFormatMethod {
+        public static string Method {
             get {
-                return ResourceManager.GetString("LogFormatMethod", resourceCulture);
+                return ResourceManager.GetString("Method", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 操作人姓名.
+        ///   Looks up a localized string similar to 操作人名称.
         /// </summary>
-        public static string LogFormatOperator {
+        public static string Operator {
             get {
-                return ResourceManager.GetString("LogFormatOperator", resourceCulture);
+                return ResourceManager.GetString("Operator", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 参数.
         /// </summary>
-        public static string LogFormatParams {
+        public static string Params {
             get {
-                return ResourceManager.GetString("LogFormatParams", resourceCulture);
+                return ResourceManager.GetString("Params", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 角色.
         /// </summary>
-        public static string LogFormatRole {
+        public static string Role {
             get {
-                return ResourceManager.GetString("LogFormatRole", resourceCulture);
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sql语句.
+        /// </summary>
+        public static string Sql {
+            get {
+                return ResourceManager.GetString("Sql", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sql参数.
         /// </summary>
-        public static string LogFormatSqlParams {
+        public static string SqlParams {
             get {
-                return ResourceManager.GetString("LogFormatSqlParams", resourceCulture);
+                return ResourceManager.GetString("SqlParams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 堆栈跟踪.
+        /// </summary>
+        public static string StackTrace {
+            get {
+                return ResourceManager.GetString("StackTrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 租户.
+        /// </summary>
+        public static string Tenant {
+            get {
+                return ResourceManager.GetString("Tenant", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 线程号.
         /// </summary>
-        public static string LogFormatThreadId {
+        public static string ThreadId {
             get {
-                return ResourceManager.GetString("LogFormatThreadId", resourceCulture);
+                return ResourceManager.GetString("ThreadId", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 操作时间.
+        ///   Looks up a localized string similar to 操作开始时间.
         /// </summary>
-        public static string LogFormatTime {
+        public static string Time {
             get {
-                return ResourceManager.GetString("LogFormatTime", resourceCulture);
+                return ResourceManager.GetString("Time", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 已执行(秒).
         /// </summary>
-        public static string LogFormatTotalSeconds {
+        public static string TotalSeconds {
             get {
-                return ResourceManager.GetString("LogFormatTotalSeconds", resourceCulture);
+                return ResourceManager.GetString("TotalSeconds", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 跟踪号.
         /// </summary>
-        public static string LogFormatTraceId {
+        public static string TraceId {
             get {
-                return ResourceManager.GetString("LogFormatTraceId", resourceCulture);
+                return ResourceManager.GetString("TraceId", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Url.
         /// </summary>
-        public static string LogFormatUrl {
+        public static string Url {
             get {
-                return ResourceManager.GetString("LogFormatUrl", resourceCulture);
+                return ResourceManager.GetString("Url", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 操作人编号.
+        ///   Looks up a localized string similar to 操作人Id.
         /// </summary>
-        public static string LogFormatUserId {
+        public static string UserId {
             get {
-                return ResourceManager.GetString("LogFormatUserId", resourceCulture);
+                return ResourceManager.GetString("UserId", resourceCulture);
             }
         }
     }

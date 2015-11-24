@@ -46,16 +46,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
-    <Compile Include="CommonLog.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommonLog.resx</DependentUpon>
-    </Compile>
     <Compile Include="Consts.cs" />
     <Compile Include="EntityBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityBase.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LogMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogMessage.resx</DependentUpon>
     </Compile>
     <Compile Include="Pager.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,13 +74,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommonLog.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>CommonLog.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="EntityBase.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EntityBase.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogMessage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogMessage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Pager.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,5 +1,4 @@
 ﻿using System;
-using Util.Resources;
 
 namespace Util.Core.Logs.Formats
 {
@@ -13,7 +12,7 @@ namespace Util.Core.Logs.Formats
 
         public override string Format()
         {
-            Add(CommonLog.LogFormatCaption, Message.Caption);
+            Add(Util.Resources.LogMessage.Caption, Message.Caption);
 
             return base.Format();
         }

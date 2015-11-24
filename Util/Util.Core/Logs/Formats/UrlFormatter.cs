@@ -25,7 +25,7 @@ namespace Util.Core.Logs.Formats
                 return;
             }
 
-            Add($"{CommonLog.LogFormatUrl}：{0}", Message.Url);
+            Add($"{Util.Resources.LogMessage.Url}：{0}", Message.Url);
         }
     }
 }

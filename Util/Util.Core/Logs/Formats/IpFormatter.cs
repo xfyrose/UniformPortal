@@ -1,5 +1,4 @@
 ﻿using System;
-using Util.Resources;
 
 namespace Util.Core.Logs.Formats
 {
@@ -13,9 +12,9 @@ namespace Util.Core.Logs.Formats
 
         public override string Format()
         {
-            Add(CommonLog.LogFormatIp, Message.Ip);
-            Add(CommonLog.LogFormatHost, Message.Host);
-            Add(CommonLog.LogFormatThreadId, Message.ThreadId);
+            Add(Util.Resources.LogMessage.Ip, Message.Ip);
+            Add(Util.Resources.LogMessage.Host, Message.Host);
+            Add(Util.Resources.LogMessage.ThreadId, Message.ThreadId);
 
             return base.Format();
         }

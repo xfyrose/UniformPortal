@@ -13,7 +13,7 @@ namespace Util.Core.Logs.Formats
 
         public override string Format()
         {
-            Add(CommonLog.LogFormatBusinessId, Message.BusinessId);
+            Add(Util.Resources.LogMessage.BusinessId, Message.BusinessId);
 
             return base.Format() + string.Empty;
         }

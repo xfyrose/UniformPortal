@@ -9,7 +9,7 @@ namespace Util.Domains
         {
         }
 
-        public byte[] Version { get; set; }
+        public virtual byte[] Version { get; set; }
     }
 
     public abstract class AggregateRoot : AggregateRoot<Guid>

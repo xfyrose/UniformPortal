@@ -132,10 +132,16 @@
   <data name="PasswordSalt" xml:space="preserve">
     <value>密码的混淆码</value>
   </data>
-  <data name="ValidateNameLengthMax" xml:space="preserve">
+  <data name="ValidateNameRequired" xml:space="preserve">
+    <value>用户名称不可为空</value>
+  </data>
+  <data name="ValidateNameStringLengthMax" xml:space="preserve">
     <value>用户名称长度不能大于{1}</value>
   </data>
-  <data name="ValidateNameLengthMin" xml:space="preserve">
-    <value>用户名称长度不能小于{1}</value>
+  <data name="ValidateNameStringLengthMaxMin" xml:space="preserve">
+    <value>用户名称长度不能大于{1}、不能小于{2}</value>
+  </data>
+  <data name="ValidatePasswordRequired" xml:space="preserve">
+    <value>密码不可为空</value>
   </data>
 </root>

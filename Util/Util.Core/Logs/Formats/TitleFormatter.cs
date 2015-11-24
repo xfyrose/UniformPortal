@@ -21,22 +21,22 @@ namespace Util.Core.Logs.Formats
 
         private void AddLevel()
         {
-            Add(CommonLog.LogFormatLogLevel, Message.Level);
+            Add(Util.Resources.LogMessage.Level, Message.Level);
         }
 
         private void AddTraceId()
         {
-            Add($"{CommonLog.LogFormatTraceId}：{0}", Message.TraceId);
+            Add($"{Util.Resources.LogMessage.TraceId}：{0}", Message.TraceId);
         }
 
         private void AddTime()
         {
-            Add($"{CommonLog.LogFormatTime}：{0}", Message.Time);
+            Add($"{Util.Resources.LogMessage.Time}：{0}", Message.Time);
         }
 
         private void AddTotalSeconds()
         {
-            Add($"{CommonLog.LogFormatTotalSeconds}：{0}", Message.TotalSeconds);
+            Add($"{Util.Resources.LogMessage.TotalSeconds}：{0}", Message.TotalSeconds);
         }
     }
 }

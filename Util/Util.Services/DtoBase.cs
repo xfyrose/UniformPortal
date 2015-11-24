@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 namespace Util.Services
 {
     [DataContract]
-    public class DtoBase : IDto
+    public class DtoBase<T> : IDto<T>
     {
         [DataMember]
-        public string Id { get; set; }
+        public T Id { get; set; }
 
         [StringLength(Util.Resources.Consts.UserIdLengthMax, ErrorMessageResourceType = typeof(Util.Resources.EntityBase), ErrorMessageResourceName = nameof(Util.Resources.EntityBase.ValidateInsertedUserIdStringLengthMax))]
         [Display(ResourceType = typeof(Util.Resources.EntityBase), Name = nameof(Util.Resources.EntityBase.InsertedUserId))]
@@ -45,5 +45,10 @@ namespace Util.Services
         [Display(ResourceType = typeof(Util.Resources.EntityBase), Name = nameof(Util.Resources.EntityBase.IsDeleted))]
         [DataMember]
         public bool IsDeleted { get; set; }
+    }
+
+    [DataContract]
+    public class DtoBase : DtoBase<Guid>
+    {
     }
 }
