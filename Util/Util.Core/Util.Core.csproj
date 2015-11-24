@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="00-Extensions-Expression.cs" />
     <Compile Include="00-Extensions.DateTime.cs" />
     <Compile Include="00-Extensions.Enum.cs" />
     <Compile Include="Config.cs" />
@@ -51,10 +52,12 @@
     <Compile Include="Contexts\WebContext.cs" />
     <Compile Include="Contexts\WindowsContext.cs" />
     <Compile Include="Conv.cs" />
+    <Compile Include="DataAnnotationsTemplates\StringLengthTemplate.cs" />
     <Compile Include="Datas\IUnitOfWork.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="INullObject.cs" />
+    <Compile Include="Lambdas\ParameterRebinder.cs" />
     <Compile Include="Logs\Formats\BusinessFormatter.cs" />
     <Compile Include="Logs\Formats\CaptionFormatter.cs" />
     <Compile Include="Logs\Formats\ClassFormatter.cs" />

@@ -38,4 +38,10 @@ namespace Util.Domains.Repositories
         void ClearCache();
         IUnitOfWork GetUnitOfWork();
     }
+
+    public interface IRepository<TEntity> : IRepository<TEntity, Guid>
+        where TEntity : class, IAggregateRoot<Guid>
+    {
+        
+    }
 }

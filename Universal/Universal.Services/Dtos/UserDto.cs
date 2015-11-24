@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using Util.Core.DataAnnotationsTemplates;
 using Util.Services;
 
 namespace Universal.Services.Dtos
