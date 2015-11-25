@@ -43,20 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="00-Extensions-Expression.cs" />
-    <Compile Include="00-Extensions.DateTime.cs" />
-    <Compile Include="00-Extensions.Enum.cs" />
+    <Compile Include="Extensions\Expression.cs" />
+    <Compile Include="Extensions\DateTime.cs" />
+    <Compile Include="Extensions\Enum.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Contexts\IContext.cs" />
     <Compile Include="Contexts\WebContext.cs" />
     <Compile Include="Contexts\WindowsContext.cs" />
     <Compile Include="Conv.cs" />
+    <Compile Include="DataAnnotationsTemplates\DescriptionLocalizedAttribute.cs" />
     <Compile Include="DataAnnotationsTemplates\StringLengthTemplate.cs" />
     <Compile Include="Datas\IUnitOfWork.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="INullObject.cs" />
+    <Compile Include="Lambda.cs" />
+    <Compile Include="Lambdas\ExpressionBuilder.cs" />
     <Compile Include="Lambdas\ParameterRebinder.cs" />
     <Compile Include="Logs\Formats\BusinessFormatter.cs" />
     <Compile Include="Logs\Formats\CaptionFormatter.cs" />
@@ -75,6 +78,7 @@
     <Compile Include="Logs\ILog.cs" />
     <Compile Include="Logs\LogLevel.cs" />
     <Compile Include="Logs\LogMessage.cs" />
+    <Compile Include="Operator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection.cs" />
     <Compile Include="Str.cs" />
@@ -89,10 +93,10 @@
     <Compile Include="Warning.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="00-Extensions.Validate.cs" />
+    <Compile Include="Extensions\Validate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="00-Extensions.Convert.cs" />
+    <Compile Include="Extensions\Convert.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Util.Resources\Util.Resources.csproj">

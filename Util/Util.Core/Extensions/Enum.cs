@@ -1,4 +1,4 @@
-﻿namespace Util.Core
+﻿namespace Util.Core.Extensions
 {
     public static partial class Extensions
     {

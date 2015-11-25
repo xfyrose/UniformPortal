@@ -45,6 +45,8 @@
     <Compile Include="Queries\Criterias\AndCriteria.cs" />
     <Compile Include="Queries\Criterias\Criteria.cs" />
     <Compile Include="Queries\Criterias\CriteriaBase.cs" />
+    <Compile Include="Queries\Criterias\OrCriteria.cs" />
+    <Compile Include="Queries\Criterias\SegmentCriteria.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Util\Util.Core\Util.Core.csproj">

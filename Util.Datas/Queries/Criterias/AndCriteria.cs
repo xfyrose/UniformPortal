@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using Util.Domains;
 using Util.Core;
+using Util.Core.Extensions;
 
 namespace Util.Datas.Queries.Criterias
 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Util.Core;
+using Util.Core.Extensions;
 using Util.Core.Logs;
 using Util.Core.Validations;
 using Util.Logs.Log4;

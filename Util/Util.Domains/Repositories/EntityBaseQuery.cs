@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Util.Core;
+using Util.Core.Extensions;
 
 namespace Util.Domains.Repositories
 {
