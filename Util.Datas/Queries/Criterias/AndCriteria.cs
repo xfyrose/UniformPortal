@@ -11,7 +11,7 @@ namespace Util.Datas.Queries.Criterias
     {
         public AndCriteria(Expression<Func<TEntity, bool>> first, Expression<Func<TEntity, bool>> second)
         {
-            Predicate = first.And(second);
+            Predicate = first.AndAno(second);
         }
     }
 }

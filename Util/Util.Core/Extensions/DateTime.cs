@@ -2,7 +2,7 @@
 
 namespace Util.Core.Extensions
 {
-    public static partial class Extensions
+    public static partial class CustomExtensions
     {
         public static string ToMillisecondString(this DateTime dateTime)
         {

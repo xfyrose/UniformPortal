@@ -1,6 +1,6 @@
 ﻿namespace Util.Core.Extensions
 {
-    public static partial class Extensions
+    public static partial class CustomExtensions
     {
         public static string Description(this System.Enum instance)
         {

@@ -4,9 +4,12 @@ namespace Util.Domains.Repositories
 {
     public class Pager : StateDescription, IPager
     {
-        public Pager()
-            : this(1)
+        public Pager(int pageNumber, int pageSize = 20, int totalCount = 0, string order = "")
         {
+            PageNumber = pageNumber;
+            PageSize = pageSize;
+            TotalCount = totalCount;
+            Order = order;
         }
 
         public Pager(int pageNumber, int pageSize, string order)
@@ -14,12 +17,9 @@ namespace Util.Domains.Repositories
         {
         }
 
-        public Pager(int pageNumber, int pageSize = 20, int totalCount = 0, string order = "")
+        public Pager()
+            : this(1)
         {
-            PageNumber = pageNumber;
-            PageSize = pageSize;
-            TotalCount = totalCount;
-            Order = order;
         }
 
         private int _pageIndex;
@@ -69,6 +69,7 @@ namespace Util.Domains.Repositories
 
             AddDescription(nameof(PageNumber), PageNumber);
             AddDescription(nameof(PageSize), PageSize);
+            AddDescription(nameof(TotalCount), TotalCount);
             AddDescription(nameof(Order), Order);
         }
     }

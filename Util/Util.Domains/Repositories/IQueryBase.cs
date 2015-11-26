@@ -3,16 +3,11 @@ using System.Linq.Expressions;
 
 namespace Util.Domains.Repositories
 {
-    public interface ICriteria
-    {
-        string GetPredicate();
-
-        object[] GetValues();
-    }
-
-    public interface ICriteria<TEntity>
+    public interface IQueryBase<TEntity> : IPager
         where TEntity : class, IAggregateRoot
     {
         Expression<Func<TEntity, bool>> GetPredicate();
+
+        string GetOrderBy();
     }
 }

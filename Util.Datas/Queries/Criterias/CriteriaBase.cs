@@ -10,7 +10,7 @@ namespace Util.Datas.Queries.Criterias
     {
         protected Expression<Func<TEntity, bool>> Predicate { get; set; }
 
-        public virtual Expression<Func<TEntity, bool>> GetPridicate()
+        public virtual Expression<Func<TEntity, bool>> GetPredicate()
         {
             return Predicate;
         }

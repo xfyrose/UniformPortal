@@ -99,6 +99,7 @@
     <Compile Include="Dump.cs" />
     <Compile Include="EntityFramework\UnitTest1.cs" />
     <Compile Include="Expressions\Animal.cs" />
+    <Compile Include="Expressions\Product.cs" />
     <Compile Include="Expressions\UnitTest1.cs" />
     <Compile Include="Identities\UnitTest1.cs" />
     <Compile Include="Lambdas\AndAlsoModified.cs" />

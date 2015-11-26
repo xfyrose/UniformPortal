@@ -22,5 +22,7 @@ namespace Util.Core.Lambdas
         //{
         //    return ((MemberExpression)property.Body).Operation(@operator, value);
         //}
+
+        public Expression<Func<TEntity, bool>> ToLambda(Expression expression) => expression?.ToLambda<Func<TEntity, bool>>(Parameter);
     }
 }

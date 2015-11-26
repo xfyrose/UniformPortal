@@ -7,7 +7,7 @@ using Util.Core.Lambdas;
 
 namespace Util.Core.Extensions
 {
-    public static partial class Extensions
+    public static partial class CustomExtensions
     {
         public static Expression Property(this Expression expression, MemberInfo member)
         {
@@ -20,6 +20,11 @@ namespace Util.Core.Extensions
             Expression secondBody = ParameterRebinder.ReplaceParameter(map, second.Body);
 
             return Expression.Lambda<T>(merge(first.Body, second.Body), first.Parameters);
+        }
+
+        public static Expression And(this Expression left, Expression right)
+        {
+            return Expression.AndAlso(left, right);
         }
 
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
@@ -161,6 +166,11 @@ namespace Util.Core.Extensions
                 default:
                     throw new NotImplementedException();
             }
+        }
+
+        public static Expression<TDelegate> ToLambda<TDelegate>(this Expression body, params ParameterExpression[] parameters)
+        {
+            return Expression.Lambda<TDelegate>(body, parameters);
         }
     }
 }

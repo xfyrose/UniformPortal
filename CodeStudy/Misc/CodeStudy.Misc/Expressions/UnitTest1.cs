@@ -170,6 +170,8 @@ namespace CodeStudy.Misc.Expressions
 
             // Print out the expression.
             Console.WriteLine(convertExpr.ToString());
+            Console.WriteLine(convertExpr.NodeType);
+            Console.WriteLine(convertExpr.Type);
 
             // The following statement first creates an expression tree,
             // then compiles it, and then executes it.
@@ -179,6 +181,37 @@ namespace CodeStudy.Misc.Expressions
             //
             // Convert(5.5)
             // 5
+        }
+
+        [TestMethod]
+        public void TestMethod6()
+        {
+            var p = new Product() { Price = 30 };
+
+            Expression<Func<Product, bool>> predicate = x => x.Price == p.Price;
+            BinaryExpression eq = (BinaryExpression)predicate.Body;
+            MemberExpression productToPrice = (MemberExpression)eq.Right;
+
+            //var objectMember = Expression.Convert(productToPrice, typeof(int));
+
+            var getterLambda = Expression.Lambda<Func<int>>(productToPrice);
+
+            var getter = getterLambda.Compile();
+
+            Console.WriteLine(getter());
+
+            Console.WriteLine();
+
+            //System.Linq.Expressions.MemberExpression memberExpression =
+            //    System.Linq.Expressions.Expression.Field(
+            //        System.Linq.Expressions.Expression.Constant(p),
+            //        "Price");
+
+            //Console.WriteLine(memberExpression.ToString());
+            //Console.WriteLine(memberExpression.Expression.ToString());
+            //Console.WriteLine(memberExpression.Member.ToString());
+            //Console.WriteLine(memberExpression.NodeType.ToString());
+            //Console.WriteLine(memberExpression.Type.ToString());
         }
     }
 }

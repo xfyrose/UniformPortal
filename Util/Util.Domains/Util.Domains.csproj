@@ -51,6 +51,7 @@
     <Compile Include="Repositories\EntityBaseQuery.cs" />
     <Compile Include="Repositories\ICriteria.cs" />
     <Compile Include="Repositories\IPager.cs" />
+    <Compile Include="Repositories\IQueryBase.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\Pager.cs" />
     <Compile Include="Repositories\PagerList.cs" />
