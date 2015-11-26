@@ -15,7 +15,8 @@ namespace Util.Core.Lambdas
 
         public Expression Create<T>(Expression<Func<TEntity, T>> property, Operator @operator, object value)
         {
-            return Parameter.Property(Lambda.GetMember(property)).Operation(@operator, value);
+            return Parameter.MakeMemberAccess(Lambda.GetMember(property)).Operation(@operator, value);
+            //return (property.Body).Operation(@operator, value);
         }
 
         //public Expression Create<T>(Expression<Func<TEntity, T>> property, Operator @operator, object value)

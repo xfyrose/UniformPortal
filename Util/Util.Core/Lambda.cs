@@ -28,6 +28,7 @@ namespace Util.Core
                     return GetMemberExpression(((UnaryExpression)expression).Operand);
                 case ExpressionType.MemberAccess:
                     return (MemberExpression)expression;
+
                 default:
                     return null;
             }

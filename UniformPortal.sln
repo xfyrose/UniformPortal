@@ -141,7 +141,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util.Services", "Util\Util.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07-Datas", "07-Datas", "{5B88E195-E255-4317-8C03-D0A0D06499B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util.Datas", "Util.Datas\Util.Datas.csproj", "{08CFEB8D-E19C-45B9-ABBD-89AA62EA5DCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util.Datas", "Util\Util.Datas\Util.Datas.csproj", "{08CFEB8D-E19C-45B9-ABBD-89AA62EA5DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

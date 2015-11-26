@@ -12,11 +12,6 @@ namespace Util.Core.Lambdas
             _map = map ?? new Dictionary<ParameterExpression, ParameterExpression>();
         }
 
-        public static Expression ReplaceParameter(Dictionary<ParameterExpression, ParameterExpression> map, Expression exp)
-        {
-            return new ParameterRebinder(map).Visit(exp);
-        }
-
         protected override Expression VisitParameter(ParameterExpression parameterExpression)
         {
             ParameterExpression replacement;
@@ -27,6 +22,11 @@ namespace Util.Core.Lambdas
             }
 
             return base.VisitParameter(parameterExpression);
+        }
+
+        public static Expression ReplaceParameter(Dictionary<ParameterExpression, ParameterExpression> map, Expression exp)
+        {
+            return new ParameterRebinder(map).Visit(exp);
         }
     }
 }

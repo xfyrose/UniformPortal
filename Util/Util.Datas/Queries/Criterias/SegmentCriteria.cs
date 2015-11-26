@@ -39,8 +39,7 @@ namespace Util.Datas.Queries.Criterias
             Expression first = CreateLeftExpression();
             Expression second = CreateRightExpression();
            
-
-            return Builder.ToLambda(first.And(second));
+            return Builder.ToLambda(first.AndAlso(second));
         }
 
         private Expression CreateLeftExpression()

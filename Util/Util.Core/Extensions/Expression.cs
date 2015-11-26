@@ -9,9 +9,14 @@ namespace Util.Core.Extensions
 {
     public static partial class CustomExtensions
     {
-        public static Expression Property(this Expression expression, MemberInfo member)
+        public static MemberExpression MakeMemberAccess(this Expression expression, MemberInfo member)
         {
             return Expression.MakeMemberAccess(expression, member);
+        }
+
+        public static Expression AndAlso(this Expression left, Expression right)
+        {
+            return Expression.AndAlso(left, right);
         }
 
         internal static Expression<T> Compose<T>(this Expression<T> first, Expression<T> second, Func<Expression, Expression, Expression> merge)
@@ -20,11 +25,6 @@ namespace Util.Core.Extensions
             Expression secondBody = ParameterRebinder.ReplaceParameter(map, second.Body);
 
             return Expression.Lambda<T>(merge(first.Body, second.Body), first.Parameters);
-        }
-
-        public static Expression And(this Expression left, Expression right)
-        {
-            return Expression.AndAlso(left, right);
         }
 
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
