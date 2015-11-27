@@ -19,6 +19,14 @@ namespace Util.Core.Extensions
             return Expression.AndAlso(left, right);
         }
 
+        //internal static LambdaExpression Compose<T>(this LambdaExpression first, LambdaExpression second, Func<Expression, Expression, Expression> merge)
+        //{
+        //    Dictionary<ParameterExpression, ParameterExpression> map = first.Parameters.Select((f, i) => new { f, s = second.Parameters[i] }).ToDictionary(p => p.s, p => p.f);
+        //    Expression secondBody = ParameterRebinder.ReplaceParameter(map, second.Body);
+
+        //    return Expression.Lambda<T>(merge(first.Body, second.Body), first.Parameters);
+        //}
+
         internal static Expression<T> Compose<T>(this Expression<T> first, Expression<T> second, Func<Expression, Expression, Expression> merge)
         {
             Dictionary<ParameterExpression, ParameterExpression> map = first.Parameters.Select((f, i) => new { f, s = second.Parameters[i] }).ToDictionary(p => p.s, p => p.f);
@@ -42,9 +50,19 @@ namespace Util.Core.Extensions
             return left.Compose(right, Expression.AndAlso);
         }
 
-        public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> first, Expression<Func<T, bool>> second)
+        public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
         {
-            return first.Compose(second, Expression.OrElse);
+            if (left == null)
+            {
+                return right;
+            }
+
+            if (right == null)
+            {
+                return left;
+            }
+
+            return left.Compose(right, Expression.OrElse);
         }
 
         public static Expression Equal(this Expression left, Expression right)
@@ -166,6 +184,11 @@ namespace Util.Core.Extensions
                 default:
                     throw new NotImplementedException();
             }
+        }
+
+        public static object Value<T>(this Expression<Func<T, bool>> expression)
+        {
+            return Lambda.GetValue(expression);
         }
 
         public static Expression<TDelegate> ToLambda<TDelegate>(this Expression body, params ParameterExpression[] parameters)

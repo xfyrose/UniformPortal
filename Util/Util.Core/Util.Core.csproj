@@ -56,6 +56,7 @@
     <Compile Include="DataAnnotationsTemplates\StringLengthTemplate.cs" />
     <Compile Include="Datas\IUnitOfWork.cs" />
     <Compile Include="Enum.cs" />
+    <Compile Include="Extensions\Nullable.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="INullObject.cs" />
     <Compile Include="Lambda.cs" />

@@ -23,7 +23,7 @@ namespace CodeStudy.Misc.Lambdas
         public void TestMethod_Dump_Object()
         {
             object obj = new object();
-            CodeStudy.Dump.ToConsole(obj);
+            Dump.ToConsole(obj);
         }
 
         /// <summary>
@@ -37,10 +37,10 @@ namespace CodeStudy.Misc.Lambdas
             // Create a MemberExpression that represents getting 
             // the value of the 'species' field of class 'Animal'.
             MemberExpression memberExpression = Expression.Field(Expression.Constant(horse), "species");
-            CodeStudy.Dump.ToConsole(memberExpression);
+            Dump.ToConsole(memberExpression);
 
-            CodeStudy.Dump.ToConsole(memberExpression.Expression);
-            CodeStudy.Dump.ToConsole(memberExpression.Member);
+            Dump.ToConsole(memberExpression.Expression);
+            Dump.ToConsole(memberExpression.Member);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace CodeStudy.Misc.Lambdas
                                         typeof(Int16)
                                     );
 
-            CodeStudy.Dump.ToConsole(convertExpr);
+            Dump.ToConsole(convertExpr);
             // Print out the expression.
             Console.WriteLine(convertExpr.ToString());
 
@@ -79,7 +79,7 @@ namespace CodeStudy.Misc.Lambdas
         public void TestMethod_Dump_ParameterExpression()
         {
             ParameterExpression parameterExpression = Expression.Parameter(typeof(string), "stringParam");
-            CodeStudy.Dump.ToConsole(parameterExpression);
+            Dump.ToConsole(parameterExpression);
         }
 
         /// <summary>
@@ -89,10 +89,10 @@ namespace CodeStudy.Misc.Lambdas
         public void TestMethod_Dump_ManyParametersExpression()
         {
             Expression<Func<int, int, int>> expr = (x, y) => x + y + 1;
-            CodeStudy.Dump.ToConsole(expr);
+            Dump.ToConsole(expr);
             Console.WriteLine("xxxxxx-------------xxxxxx");
 
-            expr.Parameters.ToList().ForEach(m => CodeStudy.Dump.ToConsole(m));
+            expr.Parameters.ToList().ForEach(m => Dump.ToConsole(m));
         }
 
         /// <summary>
@@ -103,9 +103,9 @@ namespace CodeStudy.Misc.Lambdas
         {
             Expression<Func<int, int, int>> expr = (x, y) => x + y + 1;
             LambdaExpression lambdaExpression1 = expr as LambdaExpression;
-            CodeStudy.Dump.ToConsole(lambdaExpression1);
+            Dump.ToConsole(lambdaExpression1);
             Console.WriteLine("xxxxxx-------------xxxxxx");
-            lambdaExpression1.Parameters.ToList().ForEach(m => CodeStudy.Dump.ToConsole(m));
+            lambdaExpression1.Parameters.ToList().ForEach(m => Dump.ToConsole(m));
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace CodeStudy.Misc.Lambdas
 
             var result = Expression.Lambda<Func<bool>>(invocationExpression);
             Console.WriteLine(result.Compile()());
-            CodeStudy.Dump.ToConsole(result);
+            Dump.ToConsole(result);
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace CodeStudy.Misc.Lambdas
                 );
 
             Expression<Action> lambdaExpression = Expression.Lambda<Action>(block);
-            CodeStudy.Dump.ToConsole(lambdaExpression);
+            Dump.ToConsole(lambdaExpression);
             lambdaExpression.Compile()();
         }
 
@@ -244,7 +244,7 @@ namespace CodeStudy.Misc.Lambdas
             //    new ParameterExpression[] {s});
             //var writeline = writelineExpression.Compile();
 
-            CodeStudy.Dump.ToConsole(writelineExpression);
+            Dump.ToConsole(writelineExpression);
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace CodeStudy.Misc.Lambdas
                 )
                 );
             ifThenLambdaExpression.Compile()();
-            CodeStudy.Dump.ToConsole(ifThenLambdaExpression);
+            Dump.ToConsole(ifThenLambdaExpression);
         }
 
         [TestMethod]
@@ -287,7 +287,7 @@ namespace CodeStudy.Misc.Lambdas
                 );
 
             LambdaExpression lambdaExpression = Expression.Lambda<Func<string, string, int>>(mcCallExpression, new ParameterExpression[] { peExpression1, peExpression2 });
-            CodeStudy.Dump.ToConsole(lambdaExpression);
+            Dump.ToConsole(lambdaExpression);
 
             Func<string, string, int> complied = lambdaExpression.Compile() as Func<string, string, int>;
             Console.WriteLine(complied("a", "a"));
@@ -301,7 +301,7 @@ namespace CodeStudy.Misc.Lambdas
         public void TestMethod_Dump_ResolveExpression()
         {
             Expression<Func<int, bool>> exprTree = num => num < 5;
-            exprTree.Parameters.ToList().ForEach(m => CodeStudy.Dump.ToConsole(m));
+            exprTree.Parameters.ToList().ForEach(m => Dump.ToConsole(m));
 
             // Decompose the expression tree.
             ParameterExpression param = (ParameterExpression)exprTree.Parameters[0];
@@ -309,7 +309,7 @@ namespace CodeStudy.Misc.Lambdas
             ParameterExpression left = (ParameterExpression)operation.Left;
             ConstantExpression right = (ConstantExpression)operation.Right;
 
-            CodeStudy.Dump.ToConsole(param);
+            Dump.ToConsole(param);
         }
 
         /// <summary>
@@ -342,7 +342,7 @@ namespace CodeStudy.Misc.Lambdas
                 new ParameterExpression[] { target, methodArg });
 
             //lambdaExpression.Parameters.ToList().ForEach(m => CodeStudy.Dump.ToConsole(m));
-            CodeStudy.Dump.ToConsole(lambdaExpression);
+            Dump.ToConsole(lambdaExpression);
 
             Func<string, string, bool> compiled = lambdaExpression.Compile() as Func<string, string, bool>;
             Console.WriteLine(compiled("First", "Second"));
@@ -397,7 +397,7 @@ namespace CodeStudy.Misc.Lambdas
             //    Expression.Lambda<Func<string[], IEnumerable<string>[]>>(whereCallExpression, new ParameterExpression[] { Expression.Parameter(typeof(string[]))});
             //lmExpression.Compile()(companies);
 
-            CodeStudy.Dump.ToConsole(whereCallExpression);
+            Dump.ToConsole(whereCallExpression);
 
             // ***** End Where *****
 

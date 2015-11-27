@@ -68,6 +68,11 @@
       <DependentUpon>Pager.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Query.resx</DependentUpon>
+    </Compile>
     <Compile Include="Validate.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +100,10 @@
     <EmbeddedResource Include="Pager.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Pager.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Query.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Query.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Validate.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

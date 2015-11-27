@@ -6,23 +6,17 @@ namespace Util.Core.Lambdas
 {
     public class ExpressionBuilder<TEntity>
     {
-        public ExpressionBuilder()
-        {
-            Parameter = Expression.Parameter(typeof(TEntity), "t");
-        } 
-
-        public ParameterExpression Parameter { get; }
-
-        public Expression Create<T>(Expression<Func<TEntity, T>> property, Operator @operator, object value)
-        {
-            return Parameter.MakeMemberAccess(Lambda.GetMember(property)).Operation(@operator, value);
-            //return (property.Body).Operation(@operator, value);
-        }
-
-        //public Expression Create<T>(Expression<Func<TEntity, T>> property, Operator @operator, object value)
+        //public ExpressionBuilder()
         //{
-        //    return ((MemberExpression)property.Body).Operation(@operator, value);
-        //}
+        //} 
+
+        private ParameterExpression Parameter { get; } = Expression.Parameter(typeof(TEntity), "t");
+
+        public Expression<Func<TEntity, bool>> Create<TProperty>(Expression<Func<TEntity, TProperty>> property, Operator @operator, object value)
+        {
+            return Parameter.MakeMemberAccess(Lambda.GetMemberInfo(property)).Operation(@operator, value) as Expression<Func<TEntity, bool>>;
+            //return ((MemberExpression)property.Body).Operation(@operator, value);
+        }
 
         public Expression<Func<TEntity, bool>> ToLambda(Expression expression) => expression?.ToLambda<Func<TEntity, bool>>(Parameter);
     }

@@ -62,11 +62,12 @@ namespace CodeStudy.Misc.Expressions
                     System.Linq.Expressions.Expression.Constant(horse),
                     "species");
 
-            Console.WriteLine(memberExpression.ToString());
-            Console.WriteLine(memberExpression.Expression.ToString());
-            Console.WriteLine(memberExpression.Member.ToString());
-            Console.WriteLine(memberExpression.NodeType.ToString());
-            Console.WriteLine(memberExpression.Type.ToString());
+            CodeStudy.Misc.Dump.ToConsole(memberExpression);
+            //Console.WriteLine(memberExpression.ToString());
+            //Console.WriteLine(memberExpression.Expression.ToString());
+            //Console.WriteLine(memberExpression.Member.ToString());
+            //Console.WriteLine(memberExpression.NodeType.ToString());
+            //Console.WriteLine(memberExpression.Type.ToString());
 
             // This code produces the following output:
             //
@@ -230,6 +231,16 @@ namespace CodeStudy.Misc.Expressions
                 Console.WriteLine("Member {0} declared by {1}",
                                   member.Name, member.DeclaringType);
             }
+        }
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            Func<int, bool> func1 = (i) => i > 10;
+            CodeStudy.Misc.Dump.ToConsole(func1);
+
+            Expression<Func<int, bool>> exp1 = (i) => i > 10;
+            CodeStudy.Misc.Dump.ToConsole(exp1);
         }
     }
 }

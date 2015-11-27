@@ -25,24 +25,22 @@ namespace Util.Datas.Queries.Criterias
             //}
         }
 
-        protected abstract bool IsMinGreaterThanMax(TValue? min, TValue? max);
-
-        public Expression<Func<TEntity, TProperty>> PropertyExpression { get; set; }
-
+        private Expression<Func<TEntity, TProperty>> PropertyExpression { get; }
+        private TValue? Min { get; set; }
+        private TValue? Max { get; set; }
         private ExpressionBuilder<TEntity> Builder { get; set; } = new ExpressionBuilder<TEntity>();
 
-        public TValue? Min { get; set; }
-        public TValue? Max { get; set; }
+        protected abstract bool IsMinGreaterThanMax(TValue? min, TValue? max);
 
         public override Expression<Func<TEntity, bool>> GetPredicate()
         {
-            Expression first = CreateLeftExpression();
-            Expression second = CreateRightExpression();
+            Expression<Func<TEntity, bool>> first = CreateLeftExpression();
+            Expression<Func<TEntity, bool>> second = CreateRightExpression();
            
             return Builder.ToLambda(first.AndAlso(second));
         }
 
-        private Expression CreateLeftExpression()
+        private Expression<Func<TEntity, bool>> CreateLeftExpression()
         {
             if (Min == null)
             {
@@ -52,12 +50,7 @@ namespace Util.Datas.Queries.Criterias
             return Builder.Create(PropertyExpression, Operator.GreaterThanEqual, GetMinValue());
         }
 
-        protected virtual TValue? GetMinValue()
-        {
-            return Min;
-        }
-
-        private Expression CreateRightExpression()
+        private Expression<Func<TEntity, bool>> CreateRightExpression()
         {
             if (Max == null)
             {
@@ -70,6 +63,11 @@ namespace Util.Datas.Queries.Criterias
         protected virtual Operator GetMaxOperator()
         {
             return Operator.LessEqual;
+        }
+
+        protected virtual TValue? GetMinValue()
+        {
+            return Min;
         }
 
         protected virtual TValue? GetMaxValue()
