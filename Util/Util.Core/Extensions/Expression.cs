@@ -14,7 +14,7 @@ namespace Util.Core.Extensions
             return Expression.MakeMemberAccess(expression, member);
         }
 
-        public static Expression AndAlso(this Expression left, Expression right)
+        public static BinaryExpression AndAlso(this Expression left, Expression right)
         {
             return Expression.AndAlso(left, right);
         }
@@ -27,15 +27,15 @@ namespace Util.Core.Extensions
         //    return Expression.Lambda<T>(merge(first.Body, second.Body), first.Parameters);
         //}
 
-        internal static Expression<T> Compose<T>(this Expression<T> first, Expression<T> second, Func<Expression, Expression, Expression> merge)
+        internal static Expression<TDelegate> Compose<TDelegate>(this Expression<TDelegate> first, Expression<TDelegate> second, Func<Expression, Expression, Expression> merge)
         {
             Dictionary<ParameterExpression, ParameterExpression> map = first.Parameters.Select((f, i) => new { f, s = second.Parameters[i] }).ToDictionary(p => p.s, p => p.f);
             Expression secondBody = ParameterRebinder.ReplaceParameter(map, second.Body);
 
-            return Expression.Lambda<T>(merge(first.Body, second.Body), first.Parameters);
+            return Expression.Lambda<TDelegate>(merge(first.Body, second.Body), first.Parameters);
         }
 
-        public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
+        public static Expression<Func<TEntity, bool>> And<TEntity>(this Expression<Func<TEntity, bool>> left, Expression<Func<TEntity, bool>> right)
         {
             if (left == null)
             {
@@ -50,7 +50,7 @@ namespace Util.Core.Extensions
             return left.Compose(right, Expression.AndAlso);
         }
 
-        public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
+        public static Expression<Func<TEntity, bool>> Or<TEntity>(this Expression<Func<TEntity, bool>> left, Expression<Func<TEntity, bool>> right)
         {
             if (left == null)
             {
@@ -65,67 +65,67 @@ namespace Util.Core.Extensions
             return left.Compose(right, Expression.OrElse);
         }
 
-        public static Expression Equal(this Expression left, Expression right)
+        public static BinaryExpression Equal(this MemberExpression left, ConstantExpression right)
         {
             return Expression.Equal(left, right);
         }
 
-        public static Expression Equal(this Expression left, object value)
+        public static BinaryExpression Equal(this MemberExpression left, object value)
         {
             return left.Equal(Lambda.Constant(left, value));
         }
 
-        public static Expression NotEqual(this Expression left, Expression right)
+        public static BinaryExpression NotEqual(this MemberExpression left, Expression right)
         {
             return Expression.NotEqual(left, right);
         }
 
-        public static Expression NotEqual(this Expression left, object value)
+        public static BinaryExpression NotEqual(this MemberExpression left, object value)
         {
             return left.NotEqual(Lambda.Constant(left, value));
         }
 
-        public static Expression GreaterThan(this Expression left, Expression right)
+        public static BinaryExpression GreaterThan(this MemberExpression left, Expression right)
         {
             return Expression.GreaterThan(left, right);
         }
 
-        public static Expression GreaterThan(this Expression left, object value)
+        public static BinaryExpression GreaterThan(this MemberExpression left, object value)
         {
             return left.GreaterThan(Lambda.Constant(left, value));
         }
 
-        public static Expression GreaterThanOrEqual(this Expression left, Expression right)
+        public static BinaryExpression GreaterThanOrEqual(this MemberExpression left, Expression right)
         {
             return Expression.GreaterThanOrEqual(left, right);
         }
 
-        public static Expression GreaterThanOrEqual(this Expression left, object value)
+        public static BinaryExpression GreaterThanOrEqual(this MemberExpression left, object value)
         {
             return left.GreaterThanOrEqual(Lambda.Constant(left, value));
         }
 
-        public static Expression LessThan(this Expression left, Expression right)
+        public static BinaryExpression LessThan(this MemberExpression left, Expression right)
         {
             return Expression.LessThan(left, right);
         }
 
-        public static Expression LessThan(this Expression left, object value)
+        public static BinaryExpression LessThan(this MemberExpression left, object value)
         {
             return left.LessThan(Lambda.Constant(left, value));
         }
 
-        public static Expression LessThanOrEqual(this Expression left, Expression right)
+        public static BinaryExpression LessThanOrEqual(this MemberExpression left, Expression right)
         {
             return Expression.LessThanOrEqual(left, right);
         }
 
-        public static Expression LessThanOrEqual(this Expression left, object value)
+        public static BinaryExpression LessThanOrEqual(this MemberExpression left, object value)
         {
             return left.LessThanOrEqual(Lambda.Constant(left, value));
         }
 
-        public static Expression Call(this Expression instance, string methodName, params object[] values)
+        public static MethodCallExpression Call(this MemberExpression instance, string methodName, params object[] values)
         {
             if ((values == null) || (values.Length == 0))
             {
@@ -135,22 +135,22 @@ namespace Util.Core.Extensions
             return Expression.Call(instance, instance.Type.GetMethod(methodName), values.Select(Expression.Constant));
         }
 
-        public static Expression Contains(this Expression left, object value)
+        public static MethodCallExpression Contains(this MemberExpression left, object value)
         {
             return left.Call("Contains", new[] { typeof(string) }, value);
         }
 
-        public static Expression StartsWith(this Expression left, object value)
+        public static MethodCallExpression StartsWith(this MemberExpression left, object value)
         {
             return left.Call("StartsWith", new[] { typeof(string) }, value);
         }
 
-        public static Expression EndsWith(this Expression left, object value)
+        public static MethodCallExpression EndsWith(this MemberExpression left, object value)
         {
             return left.Call("EndsWith", new[] { typeof(string) }, value);
         }
 
-        public static Expression Operation(this Expression left, Operator @operator, object value)
+        public static Expression Operation(this MemberExpression left, Operator @operator, object value)
         {
             switch (@operator)
             {

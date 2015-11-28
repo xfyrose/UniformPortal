@@ -35,15 +35,16 @@ namespace Util.Core
             }
         }
 
-        public static ConstantExpression Constant(Expression expression, object value)
+        public static ConstantExpression Constant(MemberExpression expression, object value)
         {
-            MemberExpression memberExpression = expression as MemberExpression;
-            if (memberExpression == null)
-            {
-                return Expression.Constant(value);
-            }
+            //MemberExpression memberExpression = expression as MemberExpression;
+            //if (memberExpression == null)
+            //{
+            //    return Expression.Constant(value);
+            //}
 
-            return Expression.Constant(value, memberExpression.Type);
+            //return Expression.Constant(value, memberExpression.Type);
+            return Expression.Constant(value, expression.Type);
         }
 
         public static int GetCriteriaCount(LambdaExpression expression)
@@ -80,7 +81,7 @@ namespace Util.Core
                 case ExpressionType.Call:
                     return GetValue(((MethodCallExpression)expression).Arguments.FirstOrDefault());
                 case ExpressionType.MemberAccess:
-                    return GetMemberValue((MemberExpression) expression);
+                    return GetMemberValue((MemberExpression)expression);
                 case ExpressionType.Constant:
                     return GetConstantExpressionValue(expression);
 

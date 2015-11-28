@@ -26,7 +26,7 @@ namespace Util.Core.Lambdas
 
         public static Expression ReplaceParameter(Dictionary<ParameterExpression, ParameterExpression> map, Expression exp)
         {
-            return new ParameterRebinder(map).Visit(exp);
+            return (new ParameterRebinder(map)).Visit(exp);
         }
     }
 }
