@@ -154,6 +154,7 @@
     <Compile Include="Log4Nets\Log4Helper.cs" />
     <Compile Include="Log4Nets\UnitTestLog4Net.cs" />
     <Compile Include="Strings\UnitTest1.cs" />
+    <Compile Include="Threads\Person.cs" />
     <Compile Include="ValidationContexts\UnitTestValidationContext.cs" />
     <Compile Include="ValidationContexts\ValidateMe.cs" />
     <Compile Include="Xmls\UnitTestXml.cs" />

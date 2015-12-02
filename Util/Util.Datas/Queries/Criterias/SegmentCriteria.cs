@@ -37,7 +37,7 @@ namespace Util.Datas.Queries.Criterias
             Expression<Func<TEntity, bool>> first = CreateLeftExpression();
             Expression<Func<TEntity, bool>> second = CreateRightExpression();
            
-            return Builder.ToLambda(first.AndAlso(second));
+            return Builder.ToLambda(first.AndAlso((Expression)second));
         }
 
         private Expression<Func<TEntity, bool>> CreateLeftExpression()

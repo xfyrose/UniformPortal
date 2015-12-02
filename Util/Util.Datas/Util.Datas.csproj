@@ -53,7 +53,11 @@
     <Compile Include="Queries\Criterias\IntSegmentCriteria.cs" />
     <Compile Include="Queries\Criterias\OrCriteria.cs" />
     <Compile Include="Queries\Criterias\SegmentCriteria.cs" />
+    <Compile Include="Queries\OrderBys\OrderByBuilder.cs" />
+    <Compile Include="Queries\OrderBys\OrderByItem.cs" />
+    <Compile Include="Queries\OrderDirection.cs" />
     <Compile Include="Queries\QueryHelper.cs" />
+    <Compile Include="Query.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Util.Core\Util.Core.csproj">

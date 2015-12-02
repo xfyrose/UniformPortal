@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Operator.resx</DependentUpon>
     </Compile>
+    <Compile Include="OrderDirection.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDirection.resx</DependentUpon>
+    </Compile>
     <Compile Include="Pager.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +101,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Operator.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDirection.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderDirection.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Pager.resx">
       <Generator>ResXFileCodeGenerator</Generator>

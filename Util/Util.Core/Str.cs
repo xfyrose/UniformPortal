@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Util.Core
 {
@@ -72,6 +74,17 @@ namespace Util.Core
         public override string ToString()
         {
             return Builder.ToString();
+        }
+    }
+
+    public sealed partial class Str
+    {
+        public static string Splice<T>(IEnumerable<T> list, string quote = Util.Resources.Consts.StringQuoteEmpty, string separator = Util.Resources.Consts.StringSeparator)
+        {
+            StringBuilder result = new StringBuilder();
+            list.ToList().ForEach(l => result.AppendFormat("{0}{1}{0}{2}", quote, l, separator));
+
+            return result.ToString().TrimEnd(separator.ToCharArray());
         }
     }
 }

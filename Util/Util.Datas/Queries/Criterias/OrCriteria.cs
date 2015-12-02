@@ -11,7 +11,7 @@ namespace Util.Datas.Queries.Criterias
     {
         public OrCriteria(Expression<Func<TEntity, bool>> first, Expression<Func<TEntity, bool>> second)
         {
-            Predicate = first.Or(second);
+            Predicate = first.OrElse(second);
         }
     }
 }

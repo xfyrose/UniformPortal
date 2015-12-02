@@ -19,6 +19,16 @@ namespace Util.Datas.Queries
             }
 
             var value = predicate.Value();
+            if (value == null)
+            {
+                return null;
+            }
+            if (string.IsNullOrWhiteSpace(value.ToString()))
+            {
+                return null;
+            }
+
+            return predicate;
         }
     }
 }

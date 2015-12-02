@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using Util.Core.Extensions;
 
 namespace Util.Core
 {
@@ -35,6 +36,23 @@ namespace Util.Core
             }
         }
 
+        public static string GetName(Expression expression)
+        {
+            MemberExpression memberExpression = GetMemberExpression(expression);
+            return GetMemberName(memberExpression);
+        }
+
+        public static string GetMemberName(MemberExpression memberExpression)
+        {
+            if (memberExpression == null)
+            {
+                return string.Empty;
+            }
+
+            string result = memberExpression.ToString();
+            return result.Substring(result.IndexOf('.') + 1);
+        }
+
         public static ConstantExpression Constant(MemberExpression expression, object value)
         {
             //MemberExpression memberExpression = expression as MemberExpression;
@@ -54,7 +72,7 @@ namespace Util.Core
                 return 0;
             }
 
-            string result = expression.ToString().Replace("AndAlse", "|").Replace("OrElse", "|");
+            string result = expression.ToString().Replace("AndAlso", "|").Replace("OrElse", "|");
             return result.Split('|').Count();
         }
 
@@ -118,6 +136,13 @@ namespace Util.Core
         {
             ConstantExpression constantExpression = (ConstantExpression)expression;
             return constantExpression?.Value;
+        }
+
+        public static Expression<Func<TEntity, bool>> ParsePredicate<TEntity>(string propertyName, object value, Operator @operator)
+        {
+            ParameterExpression paramater = Expression.Parameter(typeof (TEntity), "t");
+
+            return paramater.Property(propertyName).Operation(@operator, value).ToLambda<Func<TEntity, bool>>(paramater);
         }
     }
 }

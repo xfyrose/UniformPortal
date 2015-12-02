@@ -9,6 +9,23 @@ namespace Util.Core.Extensions
 {
     public static partial class CustomExtensions
     {
+        public static MemberExpression Property(this ParameterExpression expression, string propertyName)
+        {
+            if (propertyName.All(t => t != '.'))
+            {
+                return Expression.Property(expression, propertyName);
+            }
+
+            string[] propertyNameList = propertyName.Split('.');
+            MemberExpression result = null;
+            for (int i = 0; i < propertyNameList.Length; i++)
+            {
+                result = i == 0 ? Expression.Property(expression, propertyNameList[i]) : Expression.Property(result, propertyNameList[i]);
+            }
+
+            return result;
+        }
+
         public static MemberExpression MakeMemberAccess(this Expression expression, MemberInfo member)
         {
             return Expression.MakeMemberAccess(expression, member);
@@ -35,7 +52,7 @@ namespace Util.Core.Extensions
             return Expression.Lambda<TDelegate>(merge(first.Body, second.Body), first.Parameters);
         }
 
-        public static Expression<Func<TEntity, bool>> And<TEntity>(this Expression<Func<TEntity, bool>> left, Expression<Func<TEntity, bool>> right)
+        public static Expression<Func<TEntity, bool>> AndAlso<TEntity>(this Expression<Func<TEntity, bool>> left, Expression<Func<TEntity, bool>> right)
         {
             if (left == null)
             {
@@ -50,7 +67,7 @@ namespace Util.Core.Extensions
             return left.Compose(right, Expression.AndAlso);
         }
 
-        public static Expression<Func<TEntity, bool>> Or<TEntity>(this Expression<Func<TEntity, bool>> left, Expression<Func<TEntity, bool>> right)
+        public static Expression<Func<TEntity, bool>> OrElse<TEntity>(this Expression<Func<TEntity, bool>> left, Expression<Func<TEntity, bool>> right)
         {
             if (left == null)
             {

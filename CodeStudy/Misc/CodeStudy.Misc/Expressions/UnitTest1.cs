@@ -1,10 +1,8 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodeStudy.Misc.Expressions
 {
@@ -28,6 +26,7 @@ namespace CodeStudy.Misc.Expressions
         public TestContext TestContext { get; set; }
 
         #region Additional test attributes
+
         //
         // You can use the following additional attributes as you write your tests:
         //
@@ -39,7 +38,7 @@ namespace CodeStudy.Misc.Expressions
         // [ClassCleanup()]
         // public static void MyClassCleanup() { }
         //
-        // Use TestInitialize to run code before running each test 
+        // Use TestInitialize to run code before running each test
         // [TestInitialize()]
         // public void MyTestInitialize() { }
         //
@@ -47,12 +46,12 @@ namespace CodeStudy.Misc.Expressions
         // [TestCleanup()]
         // public void MyTestCleanup() { }
         //
-        #endregion
+
+        #endregion Additional test attributes
 
         [TestMethod]
         public void TestMethod1()
         {
-
             Animal horse = new Animal();
 
             // Create a MemberExpression that represents getting
@@ -61,6 +60,63 @@ namespace CodeStudy.Misc.Expressions
                 System.Linq.Expressions.Expression.Field(
                     System.Linq.Expressions.Expression.Constant(horse),
                     "species");
+
+            CodeStudy.Misc.Dump.ToConsole(memberExpression);
+            //Console.WriteLine(memberExpression.ToString());
+            //Console.WriteLine(memberExpression.Expression.ToString());
+            //Console.WriteLine(memberExpression.Member.ToString());
+            //Console.WriteLine(memberExpression.NodeType.ToString());
+            //Console.WriteLine(memberExpression.Type.ToString());
+
+            // This code produces the following output:
+            //
+            // value(CodeSnippets.FieldExample+Animal).species
+
+             memberExpression =
+                System.Linq.Expressions.Expression.Field(
+                    System.Linq.Expressions.Expression.Constant(horse), typeof(Animal), "species");
+
+            CodeStudy.Misc.Dump.ToConsole(memberExpression);
+        }
+
+        [TestMethod]
+        public void TestMethod11()
+        {
+            Animal horse = new Animal();
+
+            // Create a MemberExpression that represents getting
+            // the value of the 'species' field of class 'Animal'.
+            System.Linq.Expressions.MemberExpression memberExpression =
+                System.Linq.Expressions.Expression.Field(
+                    System.Linq.Expressions.Expression.Parameter(typeof(Animal), "t"),
+                    "species");
+
+            CodeStudy.Misc.Dump.ToConsole(memberExpression);
+            //Console.WriteLine(memberExpression.ToString());
+            //Console.WriteLine(memberExpression.Expression.ToString());
+            //Console.WriteLine(memberExpression.Member.ToString());
+            //Console.WriteLine(memberExpression.NodeType.ToString());
+            //Console.WriteLine(memberExpression.Type.ToString());
+
+            // This code produces the following output:
+            //
+            // value(CodeSnippets.FieldExample+Animal).species
+        }
+
+        [TestMethod]
+        public void TestMethod12()
+        {
+            Animal horse = new Animal { Species = "value custom" };
+
+            // Create a MemberExpression that represents getting
+            // the value of the 'species' field of class 'Animal'.
+            System.Linq.Expressions.MemberExpression memberExpression =
+                System.Linq.Expressions.Expression.PropertyOrField(
+                    System.Linq.Expressions.Expression.Constant(horse),
+                    "species");
+
+            Console.WriteLine(Expression.Lambda<Func<string>>(memberExpression).Compile());
+            Console.WriteLine(Expression.Lambda<Func<string>>(memberExpression).Compile()());
 
             CodeStudy.Misc.Dump.ToConsole(memberExpression);
             //Console.WriteLine(memberExpression.ToString());
@@ -94,7 +150,7 @@ namespace CodeStudy.Misc.Expressions
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
 
             ParameterExpression param = Expression.Parameter(typeof(Animal), "examAnimal");
-            PropertyInfo propInfo = typeof (Animal).GetProperty("Species");
+            PropertyInfo propInfo = typeof(Animal).GetProperty("Species");
             MemberExpression memberExpression = Expression.MakeMemberAccess(param, propInfo);
             Console.WriteLine(memberExpression.ToString());
         }
@@ -103,12 +159,12 @@ namespace CodeStudy.Misc.Expressions
         public void TestMethod4()
         {
             // Add the following directive to your file:
-            // using System.Linq.Expressions;  
+            // using System.Linq.Expressions;
 
             // This parameter expression represents a variable that will hold the array.
             ParameterExpression arrayExpr = Expression.Parameter(typeof(int[]), "Array");
 
-            // This parameter expression represents an array index.            
+            // This parameter expression represents an array index.
             ParameterExpression indexExpr = Expression.Parameter(typeof(int), "Index");
 
             // This parameter represents the value that will be added to a corresponding array element.
@@ -161,9 +217,9 @@ namespace CodeStudy.Misc.Expressions
         public void TestMethod5()
         {
             // Add the following directive to your file:
-            // using System.Linq.Expressions;  
+            // using System.Linq.Expressions;
 
-            // This expression represents a type convertion operation. 
+            // This expression represents a type convertion operation.
             Expression convertExpr = Expression.Convert(
                                         Expression.Constant(5.5),
                                         typeof(Int16)
