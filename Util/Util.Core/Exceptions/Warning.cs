@@ -5,7 +5,7 @@ using System.Text;
 
 using Util.Core.Logs;
 
-namespace Util.Core
+namespace Util.Core.Exceptions
 {
     public class Warning : Exception
     {

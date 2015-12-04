@@ -53,6 +53,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DataAnnotationsTemplates\Person.cs" />
+    <Compile Include="DataAnnotationsTemplates\PersonRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAnnotationsTemplates\UnitTest1.cs" />
+    <Compile Include="Lambdas\Person.cs" />
+    <Compile Include="Lambdas\UnitTest1.cs" />
     <Compile Include="Logs\UnitTestLogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestStr.cs" />
@@ -62,6 +71,13 @@
       <Project>{a8b7c8ee-7d75-4f2d-b42d-66dd4795bda2}</Project>
       <Name>Util.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAnnotationsTemplates\PersonRes.en.resx" />
+    <EmbeddedResource Include="DataAnnotationsTemplates\PersonRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PersonRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

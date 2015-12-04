@@ -100,10 +100,10 @@ namespace Util.Domains
             AddDescription(nameof(Id), Id);
             AddDescription(nameof(InsertedUserId), InsertedUserId);
             AddDescription(nameof(InsertedUserName), InsertedUserName);
-            AddDescription(nameof(InsertedDateTime), InsertedDateTime?.ToMillisecondString());
+            AddDescription(nameof(InsertedDateTime), InsertedDateTime?.ToMilliSecondString());
             AddDescription(nameof(UpdatedUserId), UpdatedUserId);
             AddDescription(nameof(UpdatedUserName), UpdatedUserName);
-            AddDescription(nameof(UpdatedDateTime), UpdatedDateTime?.ToMillisecondString());
+            AddDescription(nameof(UpdatedDateTime), UpdatedDateTime?.ToMilliSecondString());
             AddDescription(nameof(IsEnabled), IsEnabled);
             AddDescription(nameof(IsDeleted), IsDeleted);
         }

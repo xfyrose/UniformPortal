@@ -52,6 +52,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityBase.resx</DependentUpon>
     </Compile>
+    <Compile Include="Log.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log.resx</DependentUpon>
+    </Compile>
     <Compile Include="LogMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +97,10 @@
     <EmbeddedResource Include="EntityBase.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EntityBase.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Log.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LogMessage.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

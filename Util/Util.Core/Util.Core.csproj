@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ConcurrencyException.cs" />
     <Compile Include="Extensions\Expression.cs" />
     <Compile Include="Extensions\DateTime.cs" />
     <Compile Include="Extensions\Enum.cs" />
@@ -58,7 +59,6 @@
     <Compile Include="Enum.cs" />
     <Compile Include="Extensions\Helper.cs" />
     <Compile Include="Extensions\Nullable.cs" />
-    <Compile Include="Extensions\Query.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="INullObject.cs" />
     <Compile Include="Lambda.cs" />
@@ -103,7 +103,7 @@
     <Compile Include="Validations\Validation.cs" />
     <Compile Include="Validations\ValidationResultHandler.cs" />
     <Compile Include="Validations\ValidationResultCollection.cs" />
-    <Compile Include="Warning.cs" />
+    <Compile Include="Exceptions\Warning.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Validate.cs" />

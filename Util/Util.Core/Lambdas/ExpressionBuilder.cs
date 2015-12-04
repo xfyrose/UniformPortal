@@ -12,9 +12,9 @@ namespace Util.Core.Lambdas
 
         private ParameterExpression Parameter { get; } = Expression.Parameter(typeof(TEntity), "t");
 
-        public Expression<Func<TEntity, bool>> Create<TProperty>(Expression<Func<TEntity, TProperty>> property, Operator @operator, object value)
+        public Expression Create<TProperty>(Expression<Func<TEntity, TProperty>> property, Operator @operator, object value)
         {
-            return Parameter.MakeMemberAccess(Lambda.GetMemberInfo(property)).Operation(@operator, value) as Expression<Func<TEntity, bool>>;
+            return Parameter.MakeMemberAccess(Lambda.GetMemberInfo(property)).Operation(@operator, value);
             //return ((MemberExpression)property.Body).Operation(@operator, value);
         }
 

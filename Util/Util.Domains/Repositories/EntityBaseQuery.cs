@@ -39,14 +39,14 @@ namespace Util.Domains.Repositories
             AddDescription(nameof(InsertedUserId), InsertedUserId);
             AddDescription(nameof(InsertedUserName), InsertedUserName);
 
-            AddDescription(nameof(InsertedDateTimeMin), InsertedDateTimeMin?.ToMillisecondString() ?? string.Empty);
-            AddDescription(nameof(InsertedDateTimeMax), InsertedDateTimeMax?.ToMillisecondString() ?? string.Empty);
+            AddDescription(nameof(InsertedDateTimeMin), InsertedDateTimeMin?.ToMilliSecondString() ?? string.Empty);
+            AddDescription(nameof(InsertedDateTimeMax), InsertedDateTimeMax?.ToMilliSecondString() ?? string.Empty);
 
             AddDescription(nameof(UpdatedUserId), UpdatedUserId);
             AddDescription(nameof(UpdatedUserName), UpdatedUserName);
 
-            AddDescription(nameof(UpdatedDateTimeMin), UpdatedDateTimeMin?.ToMillisecondString() ?? string.Empty);
-            AddDescription(nameof(UpdatedDateTimeMax), UpdatedDateTimeMax?.ToMillisecondString() ?? string.Empty);
+            AddDescription(nameof(UpdatedDateTimeMin), UpdatedDateTimeMin?.ToMilliSecondString() ?? string.Empty);
+            AddDescription(nameof(UpdatedDateTimeMax), UpdatedDateTimeMax?.ToMilliSecondString() ?? string.Empty);
 
             AddDescription(nameof(IsEnabled), IsEnabled);
             AddDescription(nameof(IsDeleted), IsDeleted);

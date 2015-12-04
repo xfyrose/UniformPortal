@@ -34,13 +34,13 @@ namespace Util.Datas.Queries.Criterias
 
         public override Expression<Func<TEntity, bool>> GetPredicate()
         {
-            Expression<Func<TEntity, bool>> first = CreateLeftExpression();
-            Expression<Func<TEntity, bool>> second = CreateRightExpression();
+            Expression first = CreateLeftExpression();
+            Expression second = CreateRightExpression();
            
-            return Builder.ToLambda(first.AndAlso((Expression)second));
+            return Builder.ToLambda(first.AndAlso(second));
         }
 
-        private Expression<Func<TEntity, bool>> CreateLeftExpression()
+        private Expression CreateLeftExpression()
         {
             if (Min == null)
             {
@@ -50,7 +50,7 @@ namespace Util.Datas.Queries.Criterias
             return Builder.Create(PropertyExpression, Operator.GreaterThanEqual, GetMinValue());
         }
 
-        private Expression<Func<TEntity, bool>> CreateRightExpression()
+        private Expression CreateRightExpression()
         {
             if (Max == null)
             {

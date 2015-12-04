@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Web;
 using Util.Core;
+using Util.Core.Exceptions;
 using Util.Core.Extensions;
 using Util.Core.Logs;
 using Util.Security;
@@ -176,7 +177,7 @@ namespace Util.Logs.Log4
             {
                 Level = Level.Description(),
                 TraceId = TraceId,
-                Time = DateTime.Now.ToMillisecondString(),
+                Time = DateTime.Now.ToMilliSecondString(),
                 TotalSeconds = GetTotalSeconds(),
                 Url = GetUrl(),
                 BusinessId = BusinessId,

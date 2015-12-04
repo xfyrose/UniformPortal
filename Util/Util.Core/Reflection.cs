@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
@@ -35,8 +36,7 @@ namespace Util.Core
                 return string.Empty;
             }
 
-            DescriptionAttribute attribute =
-                field.GetCustomAttributes(typeof(DescriptionAttribute), true).FirstOrDefault() as DescriptionAttribute;
+            DescriptionAttribute attribute = field.GetCustomAttributes(typeof(DescriptionAttribute), true).FirstOrDefault() as DescriptionAttribute;
 
             if (attribute == null)
             {
@@ -44,6 +44,26 @@ namespace Util.Core
             }
 
             return attribute.Description;
+        }
+
+        public static T CreateInstance<T>(string className, params object[] parameters)
+        {
+            Type type = Type.GetType(className) ?? Assembly.GetCallingAssembly().GetType(className);
+            return CreateInstance<T>(type, parameters);
+        }
+
+        public static T CreateInstance<T>(Type type, params object[] parameters)
+        {
+            return Conv.To<T>(Activator.CreateInstance(type, parameters));
+        }
+
+        public static List<T> GetByInterface<T>(Assembly assembly)
+        {
+            Type typeInterface = typeof (T);
+
+            return assembly.GetTypes()
+                .Where(t => (typeInterface.IsAssignableFrom(t)) && (t != typeInterface) && (!t.IsAbstract))
+                .Select(t => CreateInstance<T>(t)).ToList();
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace Util.Core.Datas
+﻿using System;
+
+namespace Util.Core.Datas
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         void Start();
         void Commit();

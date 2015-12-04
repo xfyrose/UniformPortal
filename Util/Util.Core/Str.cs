@@ -6,10 +6,6 @@ namespace Util.Core
 {
     public sealed partial class Str
     {
-        public Str()
-        {
-        }
-
         private StringBuilder Builder { get; set; } = new StringBuilder();
 
         public void Add<T>(T value)

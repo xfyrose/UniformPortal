@@ -61,6 +61,24 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 验证失败.
+        /// </summary>
+        public static string Failure {
+            get {
+                return ResourceManager.GetString("Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 属性验证失败.
+        /// </summary>
+        public static string PropertyFailure {
+            get {
+                return ResourceManager.GetString("PropertyFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}不可为空.
         /// </summary>
         public static string Required {

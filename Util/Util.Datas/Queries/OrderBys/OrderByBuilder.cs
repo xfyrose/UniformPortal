@@ -6,7 +6,7 @@ namespace Util.Datas.Queries.OrderBys
 {
     public class OrderByBuilder
     {
-        private List<OrderByItem> Items { get; set; } = new List<OrderByItem>();
+        private List<OrderByItem> Items { get; } = new List<OrderByItem>();
 
         public string Generate()
         {

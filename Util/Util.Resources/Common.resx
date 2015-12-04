@@ -129,9 +129,6 @@
   <data name="Information" xml:space="preserve">
     <value>信息</value>
   </data>
-  <data name="StackTrace" xml:space="preserve">
-    <value>堆栈跟踪</value>
-  </data>
   <data name="SystemBusy" xml:space="preserve">
     <value>系统忙，请稍后再试！</value>
   </data>

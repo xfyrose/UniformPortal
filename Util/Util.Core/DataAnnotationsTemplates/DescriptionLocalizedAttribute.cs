@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
+using System.Threading;
 
 namespace Util.Core.DataAnnotationsTemplates
 {
@@ -22,8 +23,11 @@ namespace Util.Core.DataAnnotationsTemplates
             get
             {
                 //string description = _resourceManager.GetString(_resourceKey, CultureInfo.CurrentCulture);
+                //string description = _resourceManager.GetString(_resourceKey, Thread.CurrentThread.CurrentCulture);
+                //string description = _resourceManager.GetString(_resourceKey, new CultureInfo("en"));
                 string description = _resourceManager.GetString(_resourceKey);
-                return !string.IsNullOrWhiteSpace(description) ? description : _resourceKey;
+
+                return string.IsNullOrWhiteSpace(description) ? _resourceKey : description;
             }
         }
     }
