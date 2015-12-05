@@ -17,7 +17,7 @@ namespace Util.Domains.Repositories
         }
 
         public PagerList(int pageNumber, int pageSize, int totalCount)
-            : this(pageNumber, pageSize, totalCount, "")
+            : this(pageNumber, pageSize, totalCount, string.Empty)
         {
             
         }

@@ -58,9 +58,17 @@
       <Project>{531a9402-e0ce-4121-ad93-47111d96618f}</Project>
       <Name>Util.Domains</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util.Logs.Log4\Util.Logs.Log4.csproj">
+      <Project>{1aa31564-d9d8-4062-a044-88876baf9dd0}</Project>
+      <Name>Util.Logs.Log4</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Util.Resources\Util.Resources.csproj">
       <Project>{5fbf5c67-b60c-4cce-a2e6-06ba78bfbb31}</Project>
       <Name>Util.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Security\Util.Security.csproj">
+      <Project>{0902955b-7cd0-4ee6-8efc-2982704b96a4}</Project>
+      <Name>Util.Security</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

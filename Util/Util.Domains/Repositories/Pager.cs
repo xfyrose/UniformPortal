@@ -70,7 +70,11 @@ namespace Util.Domains.Repositories
             AddDescription(nameof(PageNumber), PageNumber);
             AddDescription(nameof(PageSize), PageSize);
             AddDescription(nameof(TotalCount), TotalCount);
+            AddDescription(nameof(PageCount), PageCount);
+            AddDescription(nameof(SkipCount), SkipCount);
             AddDescription(nameof(Order), Order);
+            AddDescription(nameof(FirstLineNumber), FirstLineNumber);
+            AddDescription(nameof(LastLineNumber), LastLineNumber);
         }
     }
 }

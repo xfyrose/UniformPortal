@@ -30,7 +30,6 @@ namespace Util.Security
         public string Name { get; private set; }
 
         public string UserId => Name;
-
         public string[] RoleIds { get; private set; }
 
         public string FullName { get; set; }

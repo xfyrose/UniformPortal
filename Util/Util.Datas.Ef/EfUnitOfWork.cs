@@ -84,10 +84,7 @@ namespace Util.Datas.Ef
 
         public static void Init(params IUnitOfWork[] unitOfWorks)
         {
-            unitOfWorks.ToList().ForEach(u =>
-            {
-                InitUnitOfWork(u);
-            });
+            unitOfWorks.ToList().ForEach(InitUnitOfWork);
         }
 
         private static void InitUnitOfWork(IUnitOfWork unitOfWork)
@@ -101,7 +98,7 @@ namespace Util.Datas.Ef
                 }
 
                 ObjectContext objectContext = adapter.ObjectContext;
-                StorageMappingItemCollection mappingCollection = (StorageMappingItemCollection) objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
+                StorageMappingItemCollection mappingCollection = (StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
                 mappingCollection.GenerateViews(new List<EdmSchemaError>());
             }
         }

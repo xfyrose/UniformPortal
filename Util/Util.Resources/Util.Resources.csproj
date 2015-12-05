@@ -99,7 +99,7 @@
       <LastGenOutput>EntityBase.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Log.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Log.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LogMessage.resx">

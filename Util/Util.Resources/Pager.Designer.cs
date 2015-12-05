@@ -88,7 +88,7 @@ namespace Util.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 总页码数.
+        ///   Looks up a localized string similar to 总页码.
         /// </summary>
         internal static string PageCount {
             get {

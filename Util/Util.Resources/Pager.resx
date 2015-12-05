@@ -127,7 +127,7 @@
     <value>排序字段</value>
   </data>
   <data name="PageCount" xml:space="preserve">
-    <value>总页码数</value>
+    <value>总页码</value>
   </data>
   <data name="PageNumber" xml:space="preserve">
     <value>页码</value>

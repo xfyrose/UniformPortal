@@ -14,7 +14,7 @@ namespace Util.Datas.Ef
     public abstract class Repository<TEntity, TKey> : IRepository<TEntity, TKey>
         where TEntity : class, IAggregateRoot<TKey>
     {
-        protected EfUnitOfWork UnitOfWork { get; private set; }
+        protected EfUnitOfWork UnitOfWork { get; }
 
         protected Repository(IUnitOfWork unitOfWork)
         {
