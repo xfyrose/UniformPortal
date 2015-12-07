@@ -194,10 +194,12 @@ namespace Util.Datas.Ef
 
         public void Clear()
         {
-            foreach (TEntity entity in UnitOfWork.Set<TEntity>())
-            {
-                UnitOfWork.Set<TEntity>().Remove(entity);
-            }
+            //foreach (TEntity entity in UnitOfWork.Set<TEntity>())
+            //{
+            //    UnitOfWork.Set<TEntity>().Remove(entity);
+            //}
+
+            UnitOfWork.Set<TEntity>().ToList().ForEach(Remove);
 
             UnitOfWork.CommitByStart();
         }

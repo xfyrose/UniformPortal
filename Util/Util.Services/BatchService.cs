@@ -13,9 +13,9 @@ namespace Util.Services
         where TDto : IDto, new()
         where TQuery : IPager
     {
-        protected List<TEntity> _addList = new List<TEntity>();
-        protected List<TEntity> _updateList = new List<TEntity>();
-        protected List<TEntity> _deleteList = new List<TEntity>();
+        protected List<TEntity> ListAdd = new List<TEntity>();
+        protected List<TEntity> ListUpdate = new List<TEntity>();
+        protected List<TEntity> ListDelete = new List<TEntity>();
 
         protected BatchService(IUnitOfWork unitOfWork, IRepository<TEntity, TKey> repository)
             : base(unitOfWork, repository)
@@ -42,9 +42,9 @@ namespace Util.Services
             FilterList(addList, deleteList);
             FilterList(updateList, deleteList);
 
-            _addList = addList.Select(ToEntity).Distinct().ToList();
-            _updateList = updateList.Select(ToEntity).Distinct().ToList();
-            _deleteList = deleteList.Select(ToEntity).Distinct().ToList();
+            ListAdd = addList.Select(ToEntity).Distinct().ToList();
+            ListUpdate = updateList.Select(ToEntity).Distinct().ToList();
+            ListDelete = deleteList.Select(ToEntity).Distinct().ToList();
         }
 
         private void FilterList(List<TDto> list, IEnumerable<TDto> deleteList)
@@ -60,31 +60,31 @@ namespace Util.Services
 
         private void AddList()
         {
-            if ((_addList == null) || (_addList.Count == 0))
+            if ((ListAdd == null) || (ListAdd.Count == 0))
             {
                 return;
             }
 
             Log.Content.AddLine($"{Util.Resources.Log.AddEntity}:");
 
-            _addList.ForEach(Add);
+            ListAdd.ForEach(Add);
         }
 
         private void UpdateList()
         {
-            if ((_updateList == null) || (_updateList.Count == 0))
+            if ((ListUpdate == null) || (ListUpdate.Count == 0))
             {
                 return;
             }
 
             Log.Content.Add($"{Util.Resources.Log.UpdateEntity}:");
 
-            _updateList.ForEach(Update);
+            ListUpdate.ForEach(Update);
         }
 
         private void DeleteList()
         {
-            if ((_deleteList == null) || (_deleteList.Count == 0))
+            if ((ListDelete == null) || (ListDelete.Count == 0))
             {
                 return;
             }

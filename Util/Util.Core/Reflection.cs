@@ -23,7 +23,6 @@ namespace Util.Core
             return GetDescription(type, type.GetField(memberName));
         }
 
-
         public static string GetDescription(Type type, FieldInfo field)
         {
             if (type == null)
@@ -59,7 +58,7 @@ namespace Util.Core
 
         public static List<T> GetByInterface<T>(Assembly assembly)
         {
-            Type typeInterface = typeof (T);
+            Type typeInterface = typeof(T);
 
             return assembly.GetTypes()
                 .Where(t => (typeInterface.IsAssignableFrom(t)) && (t != typeInterface) && (!t.IsAbstract))
