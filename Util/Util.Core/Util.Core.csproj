@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\ConcurrencyException.cs" />
+    <Compile Include="Exports\IExportFactory.cs" />
     <Compile Include="Extensions\Expression.cs" />
     <Compile Include="Extensions\DateTime.cs" />
     <Compile Include="Extensions\Enum.cs" />

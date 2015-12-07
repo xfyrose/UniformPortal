@@ -1,6 +1,7 @@
 ﻿using Universal.Domains;
 using Universal.Domains.Models;
 using Universal.Domains.Queries;
+using Universal.Infrastructure.Datas.Core;
 using Util.Core.Datas;
 using Util.Datas.Ef;
 using Util.Datas.Sql.Queries;
@@ -10,13 +11,13 @@ namespace Universal.Infrastructure.Datas.Ef.Repositories
 {
     public class UserRepository : Repository<User, string>, IUserRepository
     {
-        public UserRepository(IUnitOfWork unitOfWork)
+        public UserRepository(IUniversalUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
 
         }
 
-        public UserRepository(IUnitOfWork unitOfWork, ISqlQuery sqlQuery)
+        public UserRepository(IUniversalUnitOfWork unitOfWork, ISqlQuery sqlQuery)
             : base(unitOfWork)
         {
             _sqlQuery = sqlQuery;

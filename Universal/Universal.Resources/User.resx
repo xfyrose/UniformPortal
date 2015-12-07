@@ -132,6 +132,9 @@
   <data name="PasswordSalt" xml:space="preserve">
     <value>密码的混淆码</value>
   </data>
+  <data name="ValidateNameRepeat" xml:space="preserve">
+    <value>用户名不可重复</value>
+  </data>
   <data name="ValidateNameRequired" xml:space="preserve">
     <value>用户名称不可为空</value>
   </data>

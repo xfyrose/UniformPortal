@@ -106,6 +106,15 @@ namespace Universal.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 用户名不可重复.
+        /// </summary>
+        public static string ValidateNameRepeat {
+            get {
+                return ResourceManager.GetString("ValidateNameRepeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 用户名称不可为空.
         /// </summary>
         public static string ValidateNameRequired {

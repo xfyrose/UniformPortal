@@ -44,6 +44,7 @@ namespace Util.Datas.Ef
         public void Update(TEntity entity)
         {
             UnitOfWork.Entry(entity).State = EntityState.Modified;
+            UnitOfWork.CommitByStart();
         }
 
         public void Update(TEntity newEntity, TEntity oldEntity)
@@ -71,6 +72,7 @@ namespace Util.Datas.Ef
         public void Remove(TEntity entity)
         {
             UnitOfWork.Set<TEntity>().Remove(entity);
+            //UnitOfWork.Entry(entity).State = EntityState.Deleted;
             UnitOfWork.CommitByStart();
         }
 

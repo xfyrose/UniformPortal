@@ -18,7 +18,7 @@ namespace Util.Services
         where TQuery : IPager
     {
         protected IUnitOfWork UnitOfWork { get; set; }
-        protected readonly IRepository<TEntity, TKey> Repository;
+        protected IRepository<TEntity, TKey> Repository;
         protected ILog Log { get; set; }
 
         protected ServiceBase(IUnitOfWork unitofWork, IRepository<TEntity, TKey> repository)
@@ -83,7 +83,7 @@ namespace Util.Services
             Log.Debug();
         }
 
-        public TDto Create()
+        public virtual TDto Create()
         {
             return new TDto();
         }
