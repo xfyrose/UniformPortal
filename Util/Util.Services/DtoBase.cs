@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 namespace Util.Services
 {
     [DataContract]
-    public class DtoBase<T> : IDto<T>
+    public class DtoBase<T> : IDto
     {
         [DataMember]
-        public T Id { get; set; }
+        public string Id { get; set; }
 
         [StringLength(Util.Resources.Consts.UserIdLengthMax, ErrorMessageResourceType = typeof(Util.Resources.EntityBase), ErrorMessageResourceName = nameof(Util.Resources.EntityBase.ValidateInsertedUserIdStringLengthMax))]
         [Display(ResourceType = typeof(Util.Resources.EntityBase), Name = nameof(Util.Resources.EntityBase.InsertedUserId))]

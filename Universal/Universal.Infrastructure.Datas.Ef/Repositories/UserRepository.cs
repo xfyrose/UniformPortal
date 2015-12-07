@@ -16,13 +16,13 @@ namespace Universal.Infrastructure.Datas.Ef.Repositories
 
         }
 
-        //public UserRepository(IUnitOfWork unitOfWork, ISqlQuery sqlQuery)
-        //    : base(unitOfWork)
-        //{
-        //    _sqlQuery = sqlQuery;
-        //}
+        public UserRepository(IUnitOfWork unitOfWork, ISqlQuery sqlQuery)
+            : base(unitOfWork)
+        {
+            _sqlQuery = sqlQuery;
+        }
 
-        //private readonly ISqlQuery _sqlQuery;
+        private readonly ISqlQuery _sqlQuery;
 
         public PagerList<User> Query(UserQuery query)
         {

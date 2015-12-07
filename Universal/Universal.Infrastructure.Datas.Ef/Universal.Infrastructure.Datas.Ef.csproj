@@ -73,13 +73,13 @@
       <Project>{2c45c632-afb5-4139-a896-5ebfa986f74e}</Project>
       <Name>Universal.Domains</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Universal.Infrastructure.Core\Universal.Infrastructure.Core.csproj">
-      <Project>{c0144f6d-1efb-4a55-beb4-131268c462fd}</Project>
-      <Name>Universal.Infrastructure.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Util\Util.Core\Util.Core.csproj">
       <Project>{a8b7c8ee-7d75-4f2d-b42d-66dd4795bda2}</Project>
       <Name>Util.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Universal.Infrastructure.Datas.Core\Universal.Infrastructure.Datas.Core.csproj">
+      <Project>{c0144f6d-1efb-4a55-beb4-131268c462fd}</Project>
+      <Name>Universal.Infrastructure.Datas.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

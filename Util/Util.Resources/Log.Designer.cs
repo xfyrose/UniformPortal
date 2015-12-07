@@ -61,6 +61,15 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 添加实体.
+        /// </summary>
+        public static string AddEntity {
+            get {
+                return ResourceManager.GetString("AddEntity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 修改后.
         /// </summary>
         public static string AfterUpdate {
@@ -79,11 +88,47 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 删除实体.
+        /// </summary>
+        public static string DeleteEntity {
+            get {
+                return ResourceManager.GetString("DeleteEntity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 删除成功.
+        /// </summary>
+        public static string DeleteSuccess {
+            get {
+                return ResourceManager.GetString("DeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 保存成功.
+        /// </summary>
+        public static string SaveSuccess {
+            get {
+                return ResourceManager.GetString("SaveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 堆栈跟踪.
         /// </summary>
         public static string StackTrace {
             get {
                 return ResourceManager.GetString("StackTrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 修改实体.
+        /// </summary>
+        public static string UpdateEntity {
+            get {
+                return ResourceManager.GetString("UpdateEntity", resourceCulture);
             }
         }
     }

@@ -3,7 +3,9 @@ using System.Linq;
 using Util.Core;
 using Util.Core.Extensions;
 using Util.Core.Datas;
+using Util.Core.Exceptions;
 using Util.Core.Logs;
+using Util.Datas.Extensions;
 using Util.Domains;
 using Util.Domains.Repositories;
 using Util.Security;
@@ -99,27 +101,134 @@ namespace Util.Services
 
         public List<TDto> GetByIds(string ids)
         {
-            throw new System.NotImplementedException();
+            return GetEntitiesByIds(ids).Select(ToDto).ToList();
         }
 
-        public List<TDto> GetAll()
+        protected List<TEntity> GetEntitiesByIds(string ids)
         {
-            throw new System.NotImplementedException();
+            List<TKey> idList = Conv.ToList<TKey>(ids);
+            idList.RemoveAll(t => t.Equals(default(TKey)));
+
+            return Repository.Find(idList);
         }
 
-        public PagerList<TDto> Query(TQuery query)
+        public virtual List<TDto> GetAll()
         {
-            throw new System.NotImplementedException();
+            return Repository.FindAll().Select(ToDto).ToList();
         }
 
-        public void Save(TDto dto)
+        public virtual PagerList<TDto> Query(TQuery param)
         {
-            throw new System.NotImplementedException();
+            IQueryBase<TEntity> query = GetQuery(param);
+            IQueryable<TEntity> queryable = Repository.Query(query).OrderBy(query.GetOrderBy()).Pager(query);
+            WriteLog(param, queryable.ToString());
+
+            return queryable.ToPagerList(query).Convert(ToDto);
         }
 
-        public void Delete(string ids)
+        public abstract IQueryBase<TEntity> GetQuery(TQuery param);
+
+        public virtual void Save(TDto dto)
         {
-            throw new System.NotImplementedException();
+            UnitOfWork.Start();
+            TEntity entity = ToEntity(dto);
+            if (IsNew(dto, entity))
+            {
+                Add(entity);
+            }
+            else
+            {
+                Update(entity);
+            }
+            UnitOfWork.Commit();
+            WriteLog(Util.Resources.Log.SaveSuccess);
+        }
+
+        protected virtual bool IsNew(TDto dto, TEntity entity)
+        {
+            if (dto.Id.IsEmpty())
+            {
+                return true;
+            }
+            if (entity.Id.Equals(default(TKey)))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        protected virtual void Add(TEntity entity)
+        {
+            entity.CheckNull(nameof(entity));
+            AddBefore(entity);
+            entity.Init();
+            entity.Validate();
+            Repository.Add(entity);
+            AddAfter(entity);
+        }
+
+        protected virtual void AddBefore(TEntity entity)
+        {
+            
+        }
+
+        protected virtual void AddAfter(TEntity entity)
+        {
+            AddLog(entity);
+        }
+
+        protected virtual void Update(TEntity entity)
+        {
+            entity.CheckNull(nameof(entity));
+            TEntity oldEntity = Repository.Find(entity.Id);
+            oldEntity.CheckNull(nameof(entity));
+            UpdateBefore(entity, oldEntity);
+            entity.Validate();
+            Update(entity, oldEntity);
+            UpdateAfter(entity);
+        }
+
+        protected virtual void UpdateBefore(TEntity newEntity, TEntity oldEntity)
+        {
+            ValidateVersion(newEntity, oldEntity);
+            LogBefore(oldEntity);
+        }
+
+        private void ValidateVersion(TEntity newEntity, TEntity oldEntity)
+        {
+            if (newEntity.Version == null)
+            {
+                throw new ConcurrencyException();
+            }
+
+            if (oldEntity.Version.Where((t, i) => newEntity.Version[i] != t).Any())
+            {
+                throw new ConcurrencyException();
+            }
+        }
+
+        protected virtual void Update(TEntity newEntity, TEntity oldEntity)
+        {
+            Repository.Update(newEntity, oldEntity);
+        }
+
+        protected virtual void UpdateAfter(TEntity entity)
+        {
+            AddLog(entity);
+        }
+
+        public virtual void Delete(string ids)
+        {
+            List<TEntity> entities = GetEntitiesByIds(ids);
+            DeleteBefore(entities);
+            Repository.Remove(entities);
+            WriteLog(Util.Resources.Log.DeleteSuccess, entities);
+        }
+
+        protected virtual void DeleteBefore(List<TEntity> entities)
+        {
+            
         }
     }
 }

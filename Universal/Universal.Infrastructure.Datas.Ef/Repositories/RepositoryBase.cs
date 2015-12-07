@@ -1,5 +1,5 @@
 ﻿using System;
-using Universal.Infrastructure.Core;
+using Universal.Infrastructure.Datas.Core;
 using Util.Datas.Ef;
 using Util.Domains;
 

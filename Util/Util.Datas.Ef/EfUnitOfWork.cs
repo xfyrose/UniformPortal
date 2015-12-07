@@ -5,6 +5,7 @@ using System.Data.Entity.Core.Mapping;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Reflection;
@@ -24,6 +25,7 @@ namespace Util.Datas.Ef
         }
 
         private bool IsStart { get; set; }
+
         public string TraceId { get; private set; }
 
         public void Start()
@@ -63,6 +65,10 @@ namespace Util.Datas.Ef
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
             GetMapps().ForEach(mapper => mapper.AddTo(modelBuilder.Configurations));
         }
 

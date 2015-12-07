@@ -1,6 +1,6 @@
 ﻿using Util.Core.Datas;
 
-namespace Universal.Infrastructure.Core
+namespace Universal.Infrastructure.Datas.Core
 {
     public interface IUniversalUnitOfWork : IUnitOfWork
     {

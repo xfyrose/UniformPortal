@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Util.Core
 {
@@ -53,6 +55,23 @@ namespace Util.Core
             {
                 return default(T);
             }
+        }
+
+        public static List<T> ToList<T>(string list)
+        {
+            List<T> result = new List<T>();
+            if (string.IsNullOrWhiteSpace(list))
+            {
+                return result;
+            }
+
+            string[] array = list.Split(',');
+            result.AddRange(from each
+                            in array
+                            where !string.IsNullOrWhiteSpace(each)
+                            select To<T>(each));
+
+            return result;
         }
     }
 }

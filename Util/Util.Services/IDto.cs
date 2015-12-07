@@ -2,12 +2,8 @@
 
 namespace Util.Services
 {
-    public interface IDto<T>
+    public interface IDto
     {
-        T Id { get; set; }
-    }
-
-    public interface IDto : IDto<Guid>
-    {
+        string Id { get; set; }
     }
 }
