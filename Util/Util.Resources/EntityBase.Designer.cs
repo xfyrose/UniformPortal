@@ -133,6 +133,24 @@ namespace Util.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 禁用.
+        /// </summary>
+        public static string IsEnabledFalse {
+            get {
+                return ResourceManager.GetString("IsEnabledFalse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 启用.
+        /// </summary>
+        public static string IsEnabledTrue {
+            get {
+                return ResourceManager.GetString("IsEnabledTrue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 修改时间.
         /// </summary>
         public static string UpdatedDateTime {
@@ -174,6 +192,15 @@ namespace Util.Resources {
         public static string UpdatedUserName {
             get {
                 return ResourceManager.GetString("UpdatedUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id不可为空.
+        /// </summary>
+        public static string ValidateIdNull {
+            get {
+                return ResourceManager.GetString("ValidateIdNull", resourceCulture);
             }
         }
         

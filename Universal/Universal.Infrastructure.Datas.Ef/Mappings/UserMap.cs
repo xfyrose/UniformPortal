@@ -7,7 +7,7 @@ namespace Universal.Infrastructure.Datas.Ef.Mappings
     {
         protected override void MapTable()
         {
-            ToTable("Universal", "User");
+            ToTable("Universal", "dbo");
         }
 
         protected override void MapProperties()

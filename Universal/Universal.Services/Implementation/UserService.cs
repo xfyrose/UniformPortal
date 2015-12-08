@@ -107,12 +107,26 @@ namespace Universal.Services.Implementation
 
         public void Enable(List<string> ids)
         {
-            throw new System.NotImplementedException();
+            Enable(ids, true);
+        }
+
+        private void Enable(IEnumerable<string> ids, bool isEnabled)
+        {
+            UnitOfWork.Start();
+            List<User> entities = Repository.Find(ids);
+            entities.ForEach(entity => entity.IsEnabled = isEnabled);
+            UnitOfWork.Commit();
+            WriteLog(GetCaption(isEnabled), entities);
+        }
+
+        private string GetCaption(bool isEnabled)
+        {
+            return $"{(isEnabled ? Util.Resources.EntityBase.IsEnabledTrue : Util.Resources.EntityBase.IsEnabledFalse)} {Universal.Resources.Module.User}";
         }
 
         public void Disable(List<string> ids)
         {
-            throw new System.NotImplementedException();
+            Enable(ids, false);
         }
     }
 }

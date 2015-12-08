@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Util.Services
 {
     [DataContract]
-    public class DtoBase<T> : IDto
+    public class DtoBase : IDto
     {
         [DataMember]
         public string Id { get; set; }
@@ -45,10 +45,5 @@ namespace Util.Services
         [Display(ResourceType = typeof(Util.Resources.EntityBase), Name = nameof(Util.Resources.EntityBase.IsDeleted))]
         [DataMember]
         public bool IsDeleted { get; set; }
-    }
-
-    [DataContract]
-    public class DtoBase : DtoBase<Guid>
-    {
     }
 }

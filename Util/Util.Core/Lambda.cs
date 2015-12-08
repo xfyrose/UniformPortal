@@ -26,8 +26,10 @@ namespace Util.Core
             {
                 case ExpressionType.Lambda:
                     return GetMemberExpression(((LambdaExpression)expression).Body);
+
                 case ExpressionType.Convert:
                     return GetMemberExpression(((UnaryExpression)expression).Operand);
+
                 case ExpressionType.MemberAccess:
                     return (MemberExpression)expression;
 
@@ -87,8 +89,10 @@ namespace Util.Core
             {
                 case ExpressionType.Lambda:
                     return GetValue(((LambdaExpression)expression).Body);
+
                 case ExpressionType.Convert:
                     return GetValue(((UnaryExpression)expression).Operand);
+
                 case ExpressionType.Equal:
                 case ExpressionType.NotEqual:
                 case ExpressionType.GreaterThan:
@@ -96,10 +100,13 @@ namespace Util.Core
                 case ExpressionType.GreaterThanOrEqual:
                 case ExpressionType.LessThanOrEqual:
                     return GetValue(((BinaryExpression)expression).Right);
+
                 case ExpressionType.Call:
                     return GetValue(((MethodCallExpression)expression).Arguments.FirstOrDefault());
+
                 case ExpressionType.MemberAccess:
                     return GetMemberValue((MemberExpression)expression);
+
                 case ExpressionType.Constant:
                     return GetConstantExpressionValue(expression);
 
@@ -140,7 +147,7 @@ namespace Util.Core
 
         public static Expression<Func<TEntity, bool>> ParsePredicate<TEntity>(string propertyName, object value, Operator @operator)
         {
-            ParameterExpression paramater = Expression.Parameter(typeof (TEntity), "t");
+            ParameterExpression paramater = Expression.Parameter(typeof(TEntity), "t");
 
             return paramater.Property(propertyName).Operation(@operator, value).ToLambda<Func<TEntity, bool>>(paramater);
         }

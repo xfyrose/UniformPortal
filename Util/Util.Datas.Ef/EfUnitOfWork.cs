@@ -18,6 +18,8 @@ namespace Util.Datas.Ef
 {
     public class EfUnitOfWork : DbContext, IUnitOfWork
     {
+        public string TraceId { get; private set; }
+
         protected EfUnitOfWork(string connectionName)
             : base(connectionName)
         {
@@ -25,8 +27,6 @@ namespace Util.Datas.Ef
         }
 
         private bool IsStart { get; set; }
-
-        public string TraceId { get; private set; }
 
         public void Start()
         {

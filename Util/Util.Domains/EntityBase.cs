@@ -10,13 +10,14 @@ namespace Util.Domains
 {
     public abstract class EntityBase<TKey> : DomainBase, IEntity<TKey>
     {
+        public virtual TKey Id { get; set; }
+
         protected EntityBase(TKey id)
         {
             Id = id;
             //Log = Util.Logs.Log4.Log.GetContextLog(this);
         }
 
-        public virtual TKey Id { get; set; }
         public virtual TKey InsertedUserId { get; set; }
         public virtual string InsertedUserName { get; set; }
         public virtual DateTime? InsertedDateTime { get; set; }
@@ -87,7 +88,7 @@ namespace Util.Domains
         {
             if (Equals(Id, default(TKey)))
             {
-                results.Add(new ValidationResult("Id不能为空"));
+                results.Add(new ValidationResult(Util.Resources.EntityBase.ValidateIdNull));
             }
 
             base.Validate();

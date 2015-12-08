@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Util.Core;
+using Util.Core.Extensions;
+using Util.Datas.Extensions;
 using Util.Datas.Queries;
 using Util.Datas.Queries.Criterias;
 using Util.Datas.Queries.OrderBys;
 using Util.Domains;
 using Util.Domains.Repositories;
-using Util.Core.Extensions;
-using Util.Datas.Extensions;
 
 namespace Util.Datas
 {
@@ -51,16 +51,9 @@ namespace Util.Datas
                 return this;
             }
 
-            if (isOr)
-            {
-                Or(predicate);
-            }
-            else
-            {
-                And(predicate);
-            }
+            return isOr ? Or(predicate) : And(predicate);
 
-            return this;
+            //return this;
         }
 
         public IQuery<TEntity, TKey> Or(Expression<Func<TEntity, bool>> predicate)
@@ -94,12 +87,11 @@ namespace Util.Datas
 
         public IQuery<TEntity, TKey> Filter(ICriteria<TEntity> criteria)
         {
-            And(criteria.GetPredicate());
-            return this;
+            return And(criteria.GetPredicate());
+            //return this;
         }
 
-        public IQuery<TEntity, TKey> FilterInt<TProperty>(Expression<Func<TEntity, TProperty>> propertyExpression,
-            int? min, int? max)
+        public IQuery<TEntity, TKey> FilterInt<TProperty>(Expression<Func<TEntity, TProperty>> propertyExpression, int? min, int? max)
         {
             return Filter(new IntSegmentCriteria<TEntity, TProperty>(propertyExpression, min, max));
         }
@@ -138,8 +130,7 @@ namespace Util.Datas
             return Or(query.GetPredicate());
         }
 
-        public IQuery<TEntity, TKey> OrderBy<TProperty>(Expression<Func<TEntity, TProperty>> expression,
-            bool desc = false)
+        public IQuery<TEntity, TKey> OrderBy<TProperty>(Expression<Func<TEntity, TProperty>> expression, bool desc = false)
         {
             return OrderBy(Lambda.GetName(expression), desc);
         }
@@ -166,13 +157,13 @@ namespace Util.Datas
         private IQueryable<TEntity> Execute(IQueryable<TEntity> queryable)
         {
             queryable.CheckNull(nameof(queryable));
-            queryable = FilterBy(queryable);
+            queryable = FilterTo(queryable);
             GetOrderBy();
 
             return queryable;
         }
 
-        private IQueryable<TEntity> FilterBy(IQueryable<TEntity> queryable)
+        private IQueryable<TEntity> FilterTo(IQueryable<TEntity> queryable)
         {
             if (Criteria == null)
             {
@@ -194,7 +185,6 @@ namespace Util.Datas
         public Query(IPager pager)
             : base(pager)
         {
-            
         }
     }
 }

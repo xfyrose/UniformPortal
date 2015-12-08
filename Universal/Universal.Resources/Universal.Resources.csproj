@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Module.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Module.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -48,6 +53,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Module.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Module.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="User.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>User.Designer.cs</LastGenOutput>

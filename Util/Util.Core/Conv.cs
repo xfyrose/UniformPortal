@@ -41,12 +41,12 @@ namespace Util.Core
             {
                 if (type.Name.ToLower() == "guid")
                 {
-                    return (T) (object) new Guid(data.ToString());
+                    return (T)(object)new Guid(data.ToString());
                 }
 
                 if (data is IConvertible)
                 {
-                    return (T) Convert.ChangeType(data, type);
+                    return (T)Convert.ChangeType(data, type);
                 }
 
                 return (T)data;
@@ -65,7 +65,7 @@ namespace Util.Core
                 return result;
             }
 
-            string[] array = list.Split(',');
+            string[] array = list.Split(Util.Resources.Consts.StringSeparator.ToCharArray());
             result.AddRange(from each
                             in array
                             where !string.IsNullOrWhiteSpace(each)

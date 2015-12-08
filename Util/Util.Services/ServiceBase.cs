@@ -19,15 +19,16 @@ namespace Util.Services
     {
         protected IUnitOfWork UnitOfWork { get; set; }
         protected IRepository<TEntity, TKey> Repository;
-        protected ILog Log { get; set; }
 
         protected ServiceBase(IUnitOfWork unitofWork, IRepository<TEntity, TKey> repository)
         {
-            Repository = repository;
             UnitOfWork = unitofWork;
-            Log = Logs.Log4.Log.GetContextLog(this);
+            Repository = repository;
+
+            //Log = Logs.Log4.Log.GetContextLog(this);
         }
 
+        protected ILog Log { get; set; } = Logs.Log4.Log.GetContextLog(typeof(ServiceBase<TEntity, TDto, TQuery, TKey>));
         protected string SelfId => SecurityContext.Identity.UserId;
 
         protected abstract TDto ToDto(TEntity entity);
@@ -44,7 +45,7 @@ namespace Util.Services
         {
             if (!Log.BusinessId.IsEmpty())
             {
-                Log.BusinessId += ",";
+                Log.BusinessId += Util.Resources.Consts.StringSeparator;
             }
 
             Log.BusinessId += entity.Id.ToString();

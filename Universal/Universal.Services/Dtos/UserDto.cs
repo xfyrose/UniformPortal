@@ -6,7 +6,7 @@ using Util.Services;
 namespace Universal.Services.Dtos
 {
     [DataContract]
-    public class UserDto : DtoBase<string>
+    public class UserDto : DtoBase
     {
         [Required(ErrorMessageResourceType = typeof(Universal.Resources.User), ErrorMessageResourceName = nameof(Universal.Resources.User.ValidateNameRequired))]
         [StringLength(Util.Resources.Consts.UserNameLengthMax, ErrorMessageResourceType = typeof(Universal.Resources.User), ErrorMessageResourceName = nameof(Universal.Resources.User.ValidateNameStringLengthMax))]

@@ -61,8 +61,9 @@ namespace Util.Core
             Type typeInterface = typeof(T);
 
             return assembly.GetTypes()
-                .Where(t => (typeInterface.IsAssignableFrom(t)) && (t != typeInterface) && (!t.IsAbstract))
-                .Select(t => CreateInstance<T>(t)).ToList();
+                .Where(t => (typeInterface.IsAssignableFrom(t)) && (!t.IsInterface) && (!t.IsAbstract))
+                .Select(t => CreateInstance<T>(t))
+                .ToList();
         }
     }
 }

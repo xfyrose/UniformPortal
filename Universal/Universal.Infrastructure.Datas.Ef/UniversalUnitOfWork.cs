@@ -12,7 +12,7 @@ namespace Universal.Infrastructure.Datas.Ef
         //}
 
         public UniversalUnitOfWork()
-            : base("Application")
+            : base("name=Application")
         {
             
         }
