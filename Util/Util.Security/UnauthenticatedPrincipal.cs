@@ -1,9 +1,9 @@
 ﻿namespace Util.Security
 {
-    public class UnauthenticatedPrincipal : Principal
+    public class UnAuthenticatedPrincipal : Principal
     {
-        public UnauthenticatedPrincipal()
-            : base(new UnauthenticatedIdentity())
+        public UnAuthenticatedPrincipal()
+            : base(new UnAuthenticatedIdentity())
         {
             
         }

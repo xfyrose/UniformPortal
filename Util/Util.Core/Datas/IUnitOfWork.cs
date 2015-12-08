@@ -6,5 +6,6 @@ namespace Util.Core.Datas
     {
         void Start();
         void Commit();
+        void CommitByStart();
     }
 }

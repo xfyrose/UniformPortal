@@ -53,7 +53,8 @@ namespace Util.Datas.Ef
             }
         }
 
-        internal void CommitByStart()
+        //internal void CommitByStart()
+        public void CommitByStart()
         {
             if (IsStart)
             {

@@ -30,7 +30,8 @@ namespace Util.Services
             AddList();
             UpdateList();
             DeleteList();
-            Save();
+            //Save();
+            UnitOfWork.CommitByStart();
             SaveAfter();
             WriteLog(Util.Resources.Log.SaveSuccess);
 
@@ -104,10 +105,15 @@ namespace Util.Services
             AddLog(entity);
         }
 
-        protected virtual void Save()
-        {
-            UnitOfWork.Commit();
-        }
+        //protected virtual void Save()
+        //{
+        //    UnitOfWork.Commit();
+        //}
+
+        //protected virtual void SaveByStart()
+        //{
+        //    UnitOfWork.CommitByStart();
+        //}
 
         protected virtual void SaveAfter()
         {

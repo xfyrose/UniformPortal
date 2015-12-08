@@ -1,8 +1,8 @@
 ﻿namespace Util.Security
 {
-    public class UnauthenticatedIdentity : Identity
+    public class UnAuthenticatedIdentity : Identity
     {
-        public UnauthenticatedIdentity()
+        public UnAuthenticatedIdentity()
             : base(false, string.Empty)
         {
             

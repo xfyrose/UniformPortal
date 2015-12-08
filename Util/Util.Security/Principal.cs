@@ -11,7 +11,7 @@ namespace Util.Security
         }
 
         public Principal()
-            : this(new UnauthenticatedIdentity())
+            : this(new UnAuthenticatedIdentity())
         {
             
         }
@@ -23,9 +23,9 @@ namespace Util.Security
             throw new System.NotImplementedException();
         }
 
-        public static UnauthenticatedPrincipal Unauthenticated()
+        public static UnAuthenticatedPrincipal Unauthenticated()
         {
-            return new UnauthenticatedPrincipal();
+            return new UnAuthenticatedPrincipal();
         }
     }
 }

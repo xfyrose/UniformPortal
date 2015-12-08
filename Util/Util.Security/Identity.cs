@@ -59,9 +59,9 @@ namespace Util.Security
             return true;
         }
 
-        public static UnauthenticatedIdentity Unauthenticated()
+        public static UnAuthenticatedIdentity Unauthenticated()
         {
-            return new UnauthenticatedIdentity();
+            return new UnAuthenticatedIdentity();
         }
     }
 }

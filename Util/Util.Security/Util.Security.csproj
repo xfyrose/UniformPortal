@@ -46,8 +46,8 @@
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityContext.cs" />
-    <Compile Include="UnauthenticatedIdentity.cs" />
-    <Compile Include="UnauthenticatedPrincipal.cs" />
+    <Compile Include="UnAuthenticatedIdentity.cs" />
+    <Compile Include="UnAuthenticatedPrincipal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Util.Core\Util.Core.csproj">
